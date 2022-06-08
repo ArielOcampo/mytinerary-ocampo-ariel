@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router';
 export default function Construction() {
   let navigate = useNavigate();
   function click(){
-    navigate('/home')
+    navigate('/')
   }
 
   return (

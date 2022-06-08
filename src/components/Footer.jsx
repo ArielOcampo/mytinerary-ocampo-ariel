@@ -18,7 +18,7 @@ export default function footer () {
 <h2 className="mb-6 text-lg  font-semibold  uppercase text-white">Navigation</h2>
 <ul className="text-gray-600 dark:text-white">
 <li className="mb-4">
-<LinkRouter to='/home' className="hover:underline text-lg text-white">Home</LinkRouter>
+<LinkRouter to='/' className="hover:underline text-lg text-white">Home</LinkRouter>
 </li>
 <li>
 <LinkRouter to='/cities' className="hover:underline text-lg text-white">Cities</LinkRouter>

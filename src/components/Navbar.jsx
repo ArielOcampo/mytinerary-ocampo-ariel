@@ -8,7 +8,7 @@ import  '../styles/navbar.css'
 import {Link as LinkRouter} from "react-router-dom"
 
 const navigation = [
-  { name: 'Home', href:"home", current: true },
+  { name: 'Home', href:"/", current: true },
   { name: 'Cities', href: "cities", current: false },
   
 ]
