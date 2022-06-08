@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Passion+One:wght@400&display=swap');
+
+.footer-styles {
+  background-color: #1f2937 !important;
+}
+
+.text-footer {
+  font-family: 'Passion One', cursive;
+  font-weight: 400;
+  font-size: 1.4rem;
+}

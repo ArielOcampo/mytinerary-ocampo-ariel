@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Passion+One:wght@400&display=swap');
+
+.navbar {
+  background-color: #1f2937;
+}
+
+.text-logo {
+  color: #fff;
+  padding: 10px;
+  /* font-family: 'Staatliches', cursive; */
+  /* font-family: 'Kaushan Script', cursive; */
+  font-family: 'Passion One', cursive;
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+
+.menu-avatar {
+  background-color: #1f2937;
+
+}
