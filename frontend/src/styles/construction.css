@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
 
-.construction-container {
-  height: 100vh;
+/* .construction-container {
+  height: 75vh;
   width: 100%;
   object-fit: contain;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
@@ -15,10 +15,10 @@
 .video-construction {
   object-fit: cover;
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   position: fixed;
   z-index: -1;
-}
+} */
 
 .texto-construction {
   display: flex;

@@ -4,25 +4,20 @@ import Home from "./pages/Home";
 import Cities from "./pages/Cities";
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import Details from "./pages/Details";
 
 
 function App() {
   return (
     <>
-    
-    <header style={{position:"fixed",zIndex: 999, width:"100%"}}>
-      <Navbar/>
-    </header>
-    <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/cities' element={<Cities/>} />
-    </Routes>
-      
-      
-    
-    <footer>
-      <Footer/>
-    </footer>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/cities' element={<Cities />} />
+        <Route path='/citie/:id' element={<Details />} />
+      </Routes>
+      <Footer />
+
     </>
   );
 }

@@ -1,0 +1,13 @@
+.cards {
+  display: flex;
+  flex: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+}
+
+.img-cards {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+}

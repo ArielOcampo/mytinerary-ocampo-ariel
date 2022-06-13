@@ -4,13 +4,13 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Avatar from '../images/avatar.png'
 import Logo from '../images/logo.png';
-import  '../styles/navbar.css'
-import {Link as LinkRouter} from "react-router-dom"
+import '../styles/navbar.css'
+import { Link as LinkRouter } from "react-router-dom"
 
 const navigation = [
-  { name: 'Home', href:"/", current: true },
+  { name: 'Home', href: "/", current: true },
   { name: 'Cities', href: "cities", current: false },
-  
+
 ]
 
 function classNames(...classes) {
@@ -19,7 +19,7 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="navbar">
+    <Disclosure as="nav" className="navbar" style={{ position: "sticky", top: 0, zIndex: 20, width: "100%" }}>
       {({ open }) => (
         <>
           <div className=" max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
@@ -52,10 +52,10 @@ export default function Example() {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <LinkRouter to={item.href} 
+                      <LinkRouter to={item.href}
                         key={item.name}
                         className={classNames(
-                        item.current ? 'text-white hover:bg-blue-600 hover:text-white' : 'text-white hover:bg-blue-600 hover:text-white',
+                          item.current ? 'text-white hover:bg-blue-600 hover:text-white' : 'text-white hover:bg-blue-600 hover:text-white',
                           'px-3 py-2 rounded-md text-base font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -67,7 +67,7 @@ export default function Example() {
                 </div>
               </div>
               <div className="absolute inset-y-2 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                
+
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">

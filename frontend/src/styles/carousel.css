@@ -2,9 +2,9 @@
 
 .carousel-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url(/src/images/fondo-carousel.png);
-  min-height: 100vh;
+  min-height: 70vh;
   background-color: rgb(209, 40, 40);
-  padding: 70px 30px;
+  padding: 50px 30px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

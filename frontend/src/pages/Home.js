@@ -4,9 +4,9 @@ import Carousel from '../components/Carousel';
 function Home() {
   return (
     <>
-    
-    <Hero/>
-    <Carousel/>    
+
+      <Hero />
+      <Carousel />
     </>
   );
 }
