@@ -1,8 +1,19 @@
+require('dotenv').config()
+require('./config/database')
 const express = require('express')
 const req = require('express/lib/request')
-const app = express()
+
+const Router = require('./routes/routes')
+
 
 const PORT = 4000
+var cors = require('cors')
+const app = express()
+//middlewares
+app.use(cors())
+app.use(express.json())
+app.use('/api', Router)
+
 app.get('/', (req, res) => {
   res.send('SERVER CREADO')
 })

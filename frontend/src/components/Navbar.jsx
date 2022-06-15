@@ -8,8 +8,8 @@ import '../styles/navbar.css'
 import { Link as LinkRouter } from "react-router-dom"
 
 const navigation = [
-  { name: 'Home', href: "/", current: true },
-  { name: 'Cities', href: "cities", current: false },
+  { name: 'Home', to: "/", current: true },
+  { name: 'Cities', to: "cities", current: false },
 
 ]
 
@@ -52,7 +52,7 @@ export default function Example() {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <LinkRouter to={item.href}
+                      <LinkRouter to={item.to}
                         key={item.name}
                         className={classNames(
                           item.current ? 'text-white hover:bg-blue-600 hover:text-white' : 'text-white hover:bg-blue-600 hover:text-white',
@@ -131,18 +131,19 @@ export default function Example() {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'text-white hover:bg-blue-600 hover:text-white' : 'text-white hover:bg-blue-600 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
+                <LinkRouter to={item.to} key={item.name}>
+                  <Disclosure.Button
+
+                    href={item.to}
+                    className={classNames(
+                      item.current ? 'text-white hover:bg-blue-600 hover:text-white' : 'text-white hover:bg-blue-600 hover:text-white',
+                      'block px-3 py-2 rounded-md text-base font-medium'
+                    )}
+                    aria-current={item.current ? 'page' : undefined}
+                  >
+                    {item.name}
+                  </Disclosure.Button>
+                </LinkRouter>
               ))}
             </div>
           </Disclosure.Panel>

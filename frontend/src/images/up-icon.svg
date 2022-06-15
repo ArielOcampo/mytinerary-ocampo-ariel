@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 64 64" aria-labelledby="title" aria-describedby="desc" role="img" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+  <title>Angle Down Circle</title>
+  <desc>A solid styled icon from Orion Icon Library.</desc>
+  <path data-name="layer1" d="M 32 0 C 7.366 0 -8.03 26.667 4.287 48 C 16.604 69.333 47.396 69.333 59.713 48 C 62.521 43.135 64 37.617 64 32 C 63.999 14.327 49.673 0 32 0 Z M 44.36 29.211 L 31.827 44.015 L 19.307 29.21 C 18.323 28.026 18.99 26.221 20.507 25.96 C 21.199 25.842 21.903 26.095 22.361 26.627 L 31.829 37.822 L 41.308 26.626 C 42.319 25.465 44.208 25.834 44.708 27.29 C 44.933 27.948 44.802 28.675 44.36 29.211 Z" fill="#0050af" transform="matrix(-1, 0, 0, -1, 63.951973, 63.999748)"/>
+</svg>

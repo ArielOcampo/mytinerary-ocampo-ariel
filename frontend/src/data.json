@@ -1,75 +1,87 @@
 
 [
   {
-    "citie": "Venecia", 
-    "country": "Italia",
+    "name": "Venice", 
+    "country": "Italy",
     "image": "https://images.unsplash.com/photo-1533676802871-eca1ae998cd5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1633&q=80",
+    "description" :"Known as the 'Queen of the Adriatic', the 'Serenissima' or the 'City of Canals', Venice is the capital of the Italian region of Veneto. Located in a marshy lagoon in the Adriatic Sea, between the mouths of the Po and Piave rivers, the city of Venice is made up of 120 small islands, connected by hundreds of bridges, rivers and canals, some of them of great beauty.",
     "id": 1
   },
   {
-    "citie": "París", 
-    "country": "Francia",
+    "name": "Paris", 
+    "country": "France",
     "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
+    "description": "Located in the north center of France, Paris is one of the most visited cities in the world, besides being the cradle of some avant-garde movements. Its long history and rich cultural, gastronomic and social heritage make it a favorite destination for thousands of tourists, attracted by fantastic monuments such as the Arc de Triomphe, the Notre Dame Cathedral or the Eiffel Tower, among others, as well as by the works of art in the Louvre Museum.",
     "id": 2
   },
   {
-    "citie": "Dubai", 
+    "name": "Dubai", 
     "country": "United Arab Emirates",
     "image": "https://images.unsplash.com/photo-1489516408517-0c0a15662682?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+    "description":"Dubai is the largest and most famous city in the United Arab Emirates, followed by Abu Dhabi, the capital of the Emirates. It is located in the Persian Gulf, between Sharjah and Abu Dhabi.Also known as the city of Dubai, it is divided by Dubai Creek, a saltwater rift that divides the city. North of the breach, the area is home to a wealth of spices, fish and gold souks. The southern side, on the other hand, is an area with a strong Indian influence.",
     "id": 3
   },
   {
-    "citie": "Tulum", 
+    "name": "Tulum", 
     "country": "Mexico",
     "image": "https://images.unsplash.com/photo-1501855901885-8b29fa615daf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+    "description":"The Magical Town of Tulum is a must and the best sample of the Mayan charm thanks to its ruins located on the edge of the Caribbean Sea; besides being the only archaeological site that sits on the edge of a cliff, under which lies the beach of Paradise, one of the best and most beautiful beaches of the Riviera Maya and most likely, the most portrayed.",
     "id": 4
   },
   {
-    "citie": "Bora Bora", 
+    "name": "Bora Bora", 
     "country": "French Polynesia",
     "image": "https://images.unsplash.com/photo-1580725869538-9b164c27c44f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
+    "description": "Bora Bora is an island paradise located in French Polynesia, in the South Pacific, whose atmosphere is the tropical sea and has two fundamental seasons: dry and wet. An island in the middle of the Pacific Ocean inventoried as a focus of visitor completely. Surrounded by a turquoise blue ocean and a splendid vegetation, here you can appreciate the miracles of a hut and the tranquility of nature.",
     "id": 5
   },
   {
-    "citie": "Taranaki", 
+    "name": "Taranaki", 
     "country": "New Zealand",
     "image": "https://images.unsplash.com/photo-1597655601841-214a4cfe8b2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=989&q=80",
+    "description":"It is a region of dairy farms, affable inhabitants and sleepy back roads, but when you look closely, you discover black sand beaches lapped by the Tasman Sea and a provincial capital with a striking art scene. Mt Taranaki, one of New Zealand's most photogenic mountains, presides over the territory.",
     "id": 6
   },
   {
-    "citie": "Sydney", 
+    "name": "Sydney", 
     "country": "Australia",
     "image": "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1633&q=80",
+    "description":"It is one of the large cities with the highest quality of life in the world thanks to its good services, magnificent climate, economic level and urban model in which the large number of parks and green areas in the center (Chinese Friendship Garden, Hyde Park, The Domain and the Royal Botanic Gardens) and in the outskirts of the city (Royal National Park) stand out.",
     "id": 7
   },
   {
-    "citie": "Ontario", 
+    "name": "Ontario", 
     "country": "Canada",
     "image": "https://images.unsplash.com/photo-1617803672592-177dbdb3abfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+    "description":"Ontario is the central province of Canada. As well as Canada's state capital, it has one of its largest cities and links the Atlantic provinces with the wild interior. Outside of the developed southeastern Ontario, it is also home to a good amount of Canadian wildlife. Tour the major urban centers and explore the forest and tundra of northern Ontario.",
     "id": 8
   },
   {
-    "citie": "New York", 
+    "name": "New York", 
     "country": "United States",
     "image": "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "description":"New York, known as the city that never sleeps, is a center of culture and attraction; it is home to a large number of museums on art, photography, architecture, technology, natural history, television and radio, the main ones being the Metropolitan Museum, the Guggenheim Museum, the Museum of Modern Art, Van Courtland house Museum, the Museum of Natural History.",
     "id": 9
   },
   {
-    "citie": "London", 
+    "name": "London", 
     "country": "United Kingdom",
     "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "description":"The most outstanding characteristic of London is that it is a city with a lot of personality, capable of making travelers from all over the world fall in love with it with just one glance. When you visit it, you will be able to see many emblematic buildings with history and an architectural level that will leave you ecstatic. In addition, you will find in it numerous alternatives for entertainment, activities of all kinds, nightlife ... no doubt you will take with you an unforgettable memory.",
     "id": 10
   },
   {
-    "citie": "Tokyo", 
+    "name": "Tokyo", 
     "country": "Japan",
     "image": "https://images.unsplash.com/flagged/photo-1577734374290-ee824cc03928?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "description":"Although it is a modern city, Tokyo retains its links to the past. Admire works of art and objects from ancient Japan and other Asian countries at the Tokyo National Museum. This collection includes objects up to 12,000 years old. Tokyo's Imperial Palace is on a site that has been home to shoguns and emperors for centuries.",
     "id": 11
   },
   {
-    "citie": "Shanghai", 
+    "name": "Shanghai", 
     "country": "China",
     "image": "https://images.unsplash.com/photo-1627484986972-e544190b8abb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1168&q=80",
+    "description":"China's most populous city, and one of the largest in the world, Shanghai has an energy unlike any other municipality in the country.Home to the second tallest building in the world, its futuristic skyline is instantly recognizable. However, it's not just the innovative infrastructure that makes the city a unique destination; Shanghai's undeniably turbulent history has also left its mark on the metropolis, which boasts a unique blend of Eastern and Western culture.",
     "id": 12
   }
 ]

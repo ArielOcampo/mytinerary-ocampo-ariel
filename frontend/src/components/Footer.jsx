@@ -3,8 +3,13 @@ import '../styles/footer.css'
 import { Link as LinkRouter } from "react-router-dom"
 
 
-export default function footer() {
+
+
+export default function Footer() {
+
+
   return (
+
     <footer className="footer-styles  bg-white  dark:bg-gray-800">
       <div className="md:flex md:justify-between items-center pt-3">
         <div className="mb-6 md:mb-0">
