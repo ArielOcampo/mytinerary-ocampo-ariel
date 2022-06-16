@@ -1,10 +1,17 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import Carousel from 'react-grid-carousel'
-import data from "../data.json";
 import "../styles/carousel.css"
+import { useState, useEffect } from 'react';
+import axios from 'axios'
 
-const Gallery = () => {
+const CarouselHome = () => {
+  const [cities, setCities] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:4000/api/cities")
+      .then(response => setCities(response.data.response.cities))
+
+  }, [])
   return (
     <div className='carousel-container'>
       <h2 className='titulo-carousel'>Popular Mytineraries</h2>
@@ -50,12 +57,12 @@ const Gallery = () => {
           }
         ]}>
 
-        {data.map((item) =>
-          <Carousel.Item key={item.id} >
+        {cities?.map((item) =>
+          <Carousel.Item key={item._id} >
             <div className="block overflow-hidden rounded-2xl">
               <img className="object-cover w-full h-56" src={item.image} alt={item.country} />
               <div className=" text-carousel">
-                <h5 className="titulo text-xl text-white">{item.citie}</h5>
+                <h5 className="titulo text-xl text-white">{item.name}</h5>
                 <p className="parrafo mt-1 text-sm text-gray-400">{item.country}</p>
               </div>
             </div>
@@ -65,4 +72,4 @@ const Gallery = () => {
     </div>
   )
 }
-export default Gallery
+export default CarouselHome

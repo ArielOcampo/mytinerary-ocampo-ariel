@@ -9,11 +9,14 @@ export default function Hero() {
         <div className="texto">
           <h1 className="font-bold ">MyTinerary</h1>
           <p className="mb-5 text-start ">Find your perfect trip, designed by insiders who know and love their cities!</p>
-          <LinkRouter to="/cities" className="fancy" href="#">
-            <span className="top-key"></span>
-            <span className="text">Find your next experience</span>
-            <span className="bottom-key-1"></span>
-            <span className="bottom-key-2"></span>
+          <LinkRouter to="/cities" href="#">
+            <button className="button">
+              <span className="button_lg">
+                <span className="button_sl"></span>
+                <span className="button_text">Find your next experience</span>
+              </span>
+            </button>
+
           </LinkRouter>
         </div>
       </div>

@@ -1,0 +1,19 @@
+.details-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url(/src/images/fondo-carousel.png);
+  background-color: rgb(209, 40, 40);
+  min-height: 71vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-attachment: fixed;
+  display: flex-start;
+  flex-direction: column;
+  width: 100%
+}
+
+@media (max-width: 1270px) {
+  .details-container {
+    min-height: 100vh;
+  }
+}

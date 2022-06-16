@@ -1,15 +1,14 @@
 import '../styles/cards.css'
-// import data from '../data.json';
 import { useState, useEffect } from 'react';
 import { Link as Linkrouter } from "react-router-dom";
 import Video from '../images/video-cities.mp4'
 import axios from 'axios'
+import Noresults from '../components/Noresults'
 
 
 export default function Cards() {
 
   const [search, setSearch] = useState('');
-  // const [citieFilter, setCitieFilter] = useState()
   const [cities, setCities] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:4000/api/cities")
@@ -17,19 +16,6 @@ export default function Cards() {
 
   }, [])
   let cityFilter = cities?.filter(item => item.name.toLowerCase().startsWith(search.trim().toLowerCase()))
-  // useEffect(() => {
-  //   console.log(search)
-  //   let citieFilter = cities?.filter(item => item.name.toLocaleLowerCase().startsWith(search.trim().toLocaleLowerCase()))
-  //   // || item.country.toLocaleLowerCase().startsWith(search.trim().toLocaleLowerCase()))
-  //   setCitieFilter(citieFilter)
-  //   console.log(citieFilter)
-  //   // eslint-disable-next-line
-  // }, [search, cities]);
-
-  // const searchText = (event) => {
-  //   setFilter(event.target.value);
-  // }
-
 
   return (
     <>
@@ -65,14 +51,16 @@ export default function Cards() {
                 <div className="p-5">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white text-center">{item.name}<p className='font-medium'>({item.country})</p></h5>
 
-                  <p className="mb-3 font-normal text-gray-400 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                  <Linkrouter to={`/citie/${item._id}`} className="flex-inline  justify-end items-center  py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    See more
-                  </Linkrouter>
+                  <p className="mb-3 text-cards font-normal text-gray-400 dark:text-gray-400">{item.description}</p>
+                  <div className='flex justify-end'>
+                    <Linkrouter to={`/citie/${item._id}`} className="flex-inline  justify-end items-center  py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      See more
+                    </Linkrouter>
+                  </div>
                 </div>
               </div >
             )
-          ) : (<p>No se econtraron resultados</p>)}
+          ) : (<div><Noresults /></div>)}
         </div >
       </div>
     </>

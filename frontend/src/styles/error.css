@@ -1,0 +1,21 @@
+.container-error {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+
+
+@media (max-width: 767px) {
+  .container-error img {
+    height: 500px;
+    background-image: url(/src/images/error.png);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+}
