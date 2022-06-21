@@ -31,7 +31,7 @@ const citiesControllers = {
     })
   },
   addCity: async (req, res) => {
-    const { name, country, image, description } = req.body
+    const { name, country, image, description, cantidad } = req.body
     let city
     let error = null
     try {
@@ -39,7 +39,8 @@ const citiesControllers = {
         name: name,
         country: country,
         image: image,
-        description: description
+        description: description,
+
       }).save()
 
     }

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'
 import { Link as Linkrouter } from 'react-router-dom'
 import '../styles/details.css'
+import Itineraries from '../components/Itineraries';
 
 
 export default function Details() {
@@ -23,7 +24,7 @@ export default function Details() {
 
       <div className='details-container' >
         <div className="cards mb-8  " >
-          <section >
+          {/* <section >
             <div className="px-4 py-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 ">
                 <div className="relative z-10 lg:py-16">
@@ -62,12 +63,13 @@ export default function Details() {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
 
 
 
         </div>
+        <div><Itineraries /></div>
       </div>
     </>
   )

@@ -83,5 +83,115 @@
     "image": "https://images.unsplash.com/photo-1627484986972-e544190b8abb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1168&q=80",
     "description":"China's most populous city, and one of the largest in the world, Shanghai has an energy unlike any other municipality in the country.Home to the second tallest building in the world, its futuristic skyline is instantly recognizable. However, it's not just the innovative infrastructure that makes the city a unique destination; Shanghai's undeniably turbulent history has also left its mark on the metropolis, which boasts a unique blend of Eastern and Western culture.",
     "id": 12
+  },
+  
+  {
+        "itinerary": "Burj Khalifa",
+        "creator": {
+            "name": "Yusuf Cairns",
+            "image": "https://images.generated.photos/hLlFz-TruYMHM7NRL0OHGc2s8WFKLqug0h4B7lIM8ts/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy90cmFu/c3BhcmVudC8wMzQw/NjYyLnBuZw.png"
+        },
+        "price": 5,
+        "duration": 2,
+        "hashtags": "#mydubai #dubailife #dubaicity",
+        "likes": "",
+        "activities": ""
+  },
+  {
+        "itinerary": "Ferrari World Abu Dhabi",
+        "creator": {
+            "name": "Keira Morin",
+            "image": "https://images.generated.photos/n9m1m_aN60TCbg2wAysKjOm5xgLl_eSBtFIMTqM51s0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy90cmFu/c3BhcmVudC8wMDk3/OTIwLnBuZw.png"
+        },
+        "price": 4,
+        "duration": 8,
+        "hashtags": "#ferrariworld #abudhabi #emirates",
+        "likes": "",
+        "activities": ""
+  },
+  {
+        "itinerary": "Tulum Archaeological Site",
+        "creator": {
+            "name": "Crystal Finley",
+            "image": "https://images.generated.photos/0LQml7389DRo5RGcDUCSQ49FpMRXRuCPNODZNJnCkXQ/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/Mzg2NTczLmpwZw.jpg"
+        },
+        "price": 3,
+        "duration": 2,
+        "hashtags": "#tulum #loves_mexico #vivamexicomx",
+        "likes": "",
+        "activities": ""
+  },
+  {
+        "itinerary": "Paradise Beach",
+        "creator": {
+            "name": "Carmel Adamson",
+            "image": "https://images.generated.photos/Gj8VwPVh9j98jM1e8iIWbvVXNEZkBA5LTRL6rF8KmY0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MDQ0MDEzLmpwZw.jpg"
+        },
+        "price": 4,
+        "duration": 6,
+        "hashtags": "#tulum #loves_mexico #Paradisebeach",
+        "likes": "",
+        "activities": ""
+  },
+  {
+        "itinerary": "Mount Taranaki, Egmont National Park",
+        "creator": {
+            "name": "Parker Finnegan",
+            "image": "https://images.generated.photos/l2Qxnk8rQisblEN-u6gwiL3Yzb86DlOziG_lyDM3Kw0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTQ4MjQyLmpwZw.jpg"
+        },
+        "price": 4,
+        "duration": 3,
+        "hashtags": "#mounttaranaki #southtaranaki #newzeland",
+        "likes": "",
+        "activities": ""
+  },
+  {
+        "itinerary": "Sydney Opera House",
+        "creator": {
+            "name": "Arvin Pittman",
+            "image": "https://images.generated.photos/HLa-KDz-nEt2MMwbKyUzJgdELghwo6qNRqEXT1ngbY8/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTU0MzU5LmpwZw.jpg"
+        },
+        "price": 2,
+        "duration": 1,
+        "hashtags": "#operahouse #ilovesydney #sydneyaustralia",
+        "likes": "",
+        "activities": ""
+  },
+  {
+        "itinerary": "Darling Harbour",
+        "creator": {
+            "name": "Regan Ruiz",
+            "image": "https://images.generated.photos/hsIAfc6ycjDXeWW4iHmEVn3U-iaJMXDImcX49vI9JnQ/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTY3MzM4LmpwZw.jpg"
+        },
+        "price": 3,
+        "duration": 3,
+        "hashtags": "#darlingharbour #darlingharboursydney #visitsydney",
+        "likes": "",
+        "activities": ""
+  },
+  {
+        "itinerary": "Senso-ji Temple",
+        "creator": {
+            "name": "Zakk Ali",
+            "image": "https://images.generated.photos/HmRkP5Zk88oODxk8XYBigDlLRtc5ad44vfyg2rr68e4/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTA0NDU3LmpwZw.jpg"
+        },
+        "price": 5,
+        "duration": 2,
+        "hashtags": "#japanculture #sensojitemple #tokyo",
+        "likes": "",
+        "activities": ""
+  },
+  {
+        "itinerary": "Piazza San Marco",
+        "creator": {
+            "name": "Katey Saunders",
+            "image": "https://images.generated.photos/45-mrLn8At8sKTFFbvV7N1sBYPi-CRwaZPgrBoyEdIs/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/MDIwMzg3LmpwZw.jpg"
+        },
+        "price": 3,
+        "duration": 2,
+        "hashtags": "#veniceitaly #italytravel #italylandscape",
+        "likes": "",
+        "activities": ""
   }
+  
 ]
