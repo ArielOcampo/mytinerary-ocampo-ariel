@@ -1,16 +1,18 @@
 const mongoose = require('mongoose')
 
 const itinerarySchema = new mongoose.Schema({
+  image: { type: String },
   itinerary: { type: String, required: true },
   creator: {
     name: { type: String, required: true },
     image: { type: String, required: true }
   },
-  price: { type: Number, required: true },
-  duration: { type: Number, required: true },
+  price: { type: String, required: true },
+  duration: { type: String, required: true },
   hashtags: [String],
   likes: [String],
-  activities: { type: String }
+  activities: { type: String },
+  city: { type: mongoose.Types.ObjectId, ref: 'cities' }
 
 })
 const itinerary = mongoose.model('itineraries', itinerarySchema)

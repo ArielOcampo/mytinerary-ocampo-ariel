@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+.font-itineraries {
+  width: 145px;
+  padding: 10px;
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+}
+
+.itineraries-background {
+  background-image: url(/src/images/subtle-prism.svg);
+  background-attachment: fixed;
+
+}
+
+.no-itineraries {
+  height: 50vh;
+}
+
+.no-itineraries p {
+  font-size: 3rem;
+}
+
+
+.image-itineraries {
+  border-start-end-radius: 40px;
+  border-start-start-radius: 40px;
+
+}
+
+.itineraries-background {
+  background-image: url(/src/images/subtle-prism.svg);
+  background-attachment: fixed;
+}
+
+/* @media (max-width: 1270px) {
+  .details-container {
+    min-height: 100vh;
+  }
+} */
+.itineraries-cards {
+  width: 80rem;
+  border-radius: 40px;
+  background-color: #1f2937;
+  margin-right: 30px;
+  margin-left: 30px;
+
+  color: #fff;
+}
+
+.image-perfil {
+  background-color: #37bfb5;
+  width: 8rem;
+  height: 8rem;
+
+}

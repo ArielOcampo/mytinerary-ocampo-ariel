@@ -9,8 +9,19 @@ import Details from "./pages/Details";
 import ScrollToTop from "react-scroll-to-top";
 import { ReactComponent as MySVG } from "../src/images/up-icon.svg";
 import ScrollTop from './components/ScrollTop'
+import { useEffect } from 'react';
+import citiesActions from './redux/actions/citiesActions';
+import { useDispatch } from 'react-redux'
 
 function App() {
+
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(citiesActions.getCities())
+
+    // eslint-disable-next-line
+  }, [])
+
   return (
     <>
       <div className='page-container'>
@@ -32,5 +43,5 @@ function App() {
     </>
   );
 }
+export default App
 
-export default App;

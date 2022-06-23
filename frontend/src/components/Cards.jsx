@@ -1,21 +1,29 @@
 import '../styles/cards.css'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link as Linkrouter } from "react-router-dom";
 import Video from '../images/video-cities.mp4'
-import axios from 'axios'
+// import axios from 'axios'
 import Noresults from '../components/Noresults'
+// import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import citiesActions from '../redux/actions/citiesActions';
 
-
-export default function Cards() {
+function Cards() {
 
   const [search, setSearch] = useState('');
-  const [cities, setCities] = useState([]);
-  useEffect(() => {
-    axios.get("http://localhost:4000/api/cities")
-      .then(response => setCities(response.data.response.cities))
 
-  }, [])
-  let cityFilter = cities?.filter(item => item.name.toLowerCase().startsWith(search.trim().toLowerCase()))
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(citiesActions.filterCities(search))
+
+
+    // eslint-disable-next-line
+  }, [search]);
+
+  const cities = useSelector(store => store.citiesReducer.filter)
+  // let cityFilter = cities?.filter(item => item.name.toLowerCase().startsWith(search.trim().toLowerCase()))
 
   return (
     <>
@@ -40,9 +48,9 @@ export default function Cards() {
       <div className="cities-container">
 
         <div className="cards mb-8" >
-          {cityFilter.length > 0 ? (
+          {cities.length > 0 ? (
 
-            cityFilter.map(item =>
+            cities.map(item =>
 
 
 
@@ -66,3 +74,12 @@ export default function Cards() {
     </>
   )
 }
+export default Cards
+
+// const mapStateToProps = (state) => {
+//   return {
+//     cities: state.citiesReducer.cities,
+//     auxiliar: state.citiesReducer.auxiliar
+//   }
+// }
+// export default connect(mapStateToProps, null)(Cards)

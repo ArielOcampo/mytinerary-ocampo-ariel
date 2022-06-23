@@ -1,17 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
-import Carousel from 'react-grid-carousel'
-import "../styles/carousel.css"
-import { useState, useEffect } from 'react';
-import axios from 'axios'
+import Carousel from 'react-grid-carousel';
+import "../styles/carousel.css";
+// import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const CarouselHome = () => {
-  const [cities, setCities] = useState([]);
-  useEffect(() => {
-    axios.get("http://localhost:4000/api/cities")
-      .then(response => setCities(response.data.response.cities))
+  const cities = useSelector(store => store.citiesReducer.cities)
 
-  }, [])
   return (
     <div className='carousel-container'>
       <h2 className='titulo-carousel'>Popular Mytineraries</h2>
@@ -73,3 +69,11 @@ const CarouselHome = () => {
   )
 }
 export default CarouselHome
+
+// const mapStateToProps = (state) => {
+//   return {
+//     cities: state.citiesReducer.cities,
+//     auxiliar: state.citiesReducer.auxiliar
+//   }
+// }
+// export default connect(mapStateToProps, null)(CarouselHome)

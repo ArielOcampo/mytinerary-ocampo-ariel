@@ -1,29 +1,27 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import axios from 'axios'
-import { Link as Linkrouter } from 'react-router-dom'
 import '../styles/details.css'
 import Itineraries from '../components/Itineraries';
+import { useSelector } from 'react-redux';
+
 
 
 export default function Details() {
-  const { id } = useParams()
-  const [city, setCity] = useState([]);
-
-  useEffect(() => {
-    axios.get(`http://localhost:4000/api/cities/${id}`)
-      .then(response => setCity(response.data.response))
-    console.log()
-
-  }, [id]);
+  const cities = useSelector(store => store.citiesReducer.oneCity)
 
   return (
     <>
 
 
-      <div className='details-container' >
-        <div className="cards mb-8  " >
+      <div className='details-container' style={{ backgroundImage: `url(${cities.image})` }} >
+        <div>
+          <h1>{cities.name}</h1>
+          {/* <div className="relative h-64 sm:h-80 lg:h-full ">
+            <img
+              className="absolute inset-0 object-cover w-full h-full "
+              src={cities.image}
+              alt="Citie"
+            />
+          </div> */}
           {/* <section >
             <div className="px-4 py-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 ">
@@ -31,7 +29,7 @@ export default function Details() {
                   <div className="relative h-64 sm:h-80 lg:h-full ">
                     <img
                       className="absolute inset-0 object-cover w-full h-full "
-                      src={city.image}
+                      src={cities.image}
                       alt="Citie"
                     />
                   </div>
@@ -44,12 +42,12 @@ export default function Details() {
 
                   <div className="p-8 sm:p-16 lg:p-24">
                     <h2 className="text-2xl font-bold sm:text-5xl">
-                      {city.name}
+                      {cities.name}
                     </h2>
-                    <p className='sm:text-xl'>{city.country}</p>
+                    <p className='sm:text-xl'>{cities.country}</p>
 
                     <p className="mt-4 text-gray-900">
-                      {city.description}
+                      {cities.description}
                     </p>
                     <div className='flex justify-end'>
                       <Linkrouter to='/cities'
@@ -64,13 +62,10 @@ export default function Details() {
               </div>
             </div>
           </section> */}
-
-
-
-
         </div>
-        <div><Itineraries /></div>
       </div>
+      <Itineraries />
+
     </>
   )
 }

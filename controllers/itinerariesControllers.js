@@ -30,18 +30,20 @@ const itinerariesControllers = {
     })
   },
   addItinerary: async (req, res) => {
-    const { itinerary, creator, price, duration, hashtags, likes, activities } = req.body
+    const { image, itinerary, creator, price, duration, hashtags, likes, activities, city } = req.body
     let Itinerary
     let error = null
     try {
       Itinerary = await new itineraries({
+        image: image,
         itinerary: itinerary,
         creator: creator,
         price: price,
         duration: duration,
         hashtags: hashtags,
         likes: likes,
-        activities: activities
+        activities: activities,
+        city: city
       }).save()
 
     }
@@ -77,6 +79,22 @@ const itinerariesControllers = {
     res.json({
       response: error ? 'ERROR' : itinerary,
       succes: error ? false : true,
+      error: error
+    })
+  },
+
+  getItinerariesById: async (req, res) => {
+    const id = req.params.id
+    let itinerary
+    let error = null
+    try {
+      itinerary = await itineraries.find({ city: id })
+    } catch (err) {
+      error = err
+    }
+    res.json({
+      response: error ? 'ERROR' : (itinerary),
+      success: error ? false : true,
       error: error
     })
   }

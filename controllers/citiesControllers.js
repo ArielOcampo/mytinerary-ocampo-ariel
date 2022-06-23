@@ -78,6 +78,7 @@ const citiesControllers = {
       succes: error ? false : true,
       error: error
     })
-  }
+  },
+
 }
 module.exports = citiesControllers

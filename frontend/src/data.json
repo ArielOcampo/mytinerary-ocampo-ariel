@@ -87,15 +87,17 @@
   
   {
         "itinerary": "Burj Khalifa",
+        "image": "https://i.imgur.com/IZrfQnf.jpg",
         "creator": {
             "name": "Yusuf Cairns",
             "image": "https://images.generated.photos/hLlFz-TruYMHM7NRL0OHGc2s8WFKLqug0h4B7lIM8ts/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy90cmFu/c3BhcmVudC8wMzQw/NjYyLnBuZw.png"
         },
-        "price": 5,
-        "duration": 2,
+        "price": "💵💵💵💵💵",
+        "duration": "2",
         "hashtags": "#mydubai #dubailife #dubaicity",
         "likes": "",
-        "activities": ""
+        "activities": "",
+        "city": "62a9d7d5b99b728f18c85aa8"
   },
   {
         "itinerary": "Ferrari World Abu Dhabi",
@@ -103,95 +105,110 @@
             "name": "Keira Morin",
             "image": "https://images.generated.photos/n9m1m_aN60TCbg2wAysKjOm5xgLl_eSBtFIMTqM51s0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy90cmFu/c3BhcmVudC8wMDk3/OTIwLnBuZw.png"
         },
-        "price": 4,
-        "duration": 8,
+        "price": "💵💵💵💵💵",
+        "duration": "8",
         "hashtags": "#ferrariworld #abudhabi #emirates",
         "likes": "",
-        "activities": ""
+        "activities": "",
+        "city": "62a9d7d5b99b728f18c85aa8"
   },
   {
         "itinerary": "Tulum Archaeological Site",
+        "image": "https://i.imgur.com/WEVUlQV.jpg",
         "creator": {
             "name": "Crystal Finley",
             "image": "https://images.generated.photos/0LQml7389DRo5RGcDUCSQ49FpMRXRuCPNODZNJnCkXQ/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/Mzg2NTczLmpwZw.jpg"
         },
-        "price": 3,
-        "duration": 2,
+        "price": "💵💵💵",
+        "duration": "2",
         "hashtags": "#tulum #loves_mexico #vivamexicomx",
         "likes": "",
-        "activities": ""
+        "activities": "",
+        "city": "62a9d7eeb99b728f18c85aaa"
   },
   {
         "itinerary": "Paradise Beach",
+         "image": "https://i.imgur.com/ZLPDjx9.jpg",
         "creator": {
             "name": "Carmel Adamson",
             "image": "https://images.generated.photos/Gj8VwPVh9j98jM1e8iIWbvVXNEZkBA5LTRL6rF8KmY0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MDQ0MDEzLmpwZw.jpg"
         },
-        "price": 4,
-        "duration": 6,
+        "price": "💵💵💵💵",
+        "duration": "6",
         "hashtags": "#tulum #loves_mexico #Paradisebeach",
         "likes": "",
-        "activities": ""
+        "activities": "",
+        "city": "62a9d7eeb99b728f18c85aaa"
   },
   {
         "itinerary": "Mount Taranaki, Egmont National Park",
+         "image": "https://i.imgur.com/XpE6ycH.jpg",
         "creator": {
             "name": "Parker Finnegan",
             "image": "https://images.generated.photos/l2Qxnk8rQisblEN-u6gwiL3Yzb86DlOziG_lyDM3Kw0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTQ4MjQyLmpwZw.jpg"
         },
-        "price": 4,
-        "duration": 3,
+        "price": "💵💵💵",
+        "duration": "3",
         "hashtags": "#mounttaranaki #southtaranaki #newzeland",
         "likes": "",
-        "activities": ""
+        "activities": "",
+        "city": "62a9e5a30475afaa60b8d653"
   },
   {
         "itinerary": "Sydney Opera House",
+         "image": "https://i.imgur.com/mQDg619.jpg",
         "creator": {
             "name": "Arvin Pittman",
             "image": "https://images.generated.photos/HLa-KDz-nEt2MMwbKyUzJgdELghwo6qNRqEXT1ngbY8/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTU0MzU5LmpwZw.jpg"
         },
-        "price": 2,
-        "duration": 1,
+        "price": "💵💵",
+        "duration": "1",
         "hashtags": "#operahouse #ilovesydney #sydneyaustralia",
         "likes": "",
-        "activities": ""
+        "activities": "",
+        "city": "62a9e5b70475afaa60b8d655"
   },
   {
         "itinerary": "Darling Harbour",
+         "image": "https://i.imgur.com/cdAM4xV.jpg",
         "creator": {
             "name": "Regan Ruiz",
             "image": "https://images.generated.photos/hsIAfc6ycjDXeWW4iHmEVn3U-iaJMXDImcX49vI9JnQ/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTY3MzM4LmpwZw.jpg"
         },
-        "price": 3,
-        "duration": 3,
+        "price": "💵💵💵",
+        "duration": "3",
         "hashtags": "#darlingharbour #darlingharboursydney #visitsydney",
         "likes": "",
-        "activities": ""
+        "activities": "",
+        "city": "62a9e5b70475afaa60b8d655"
   },
   {
         "itinerary": "Senso-ji Temple",
+         "image": "https://i.imgur.com/oGsTQps.jpg",
         "creator": {
             "name": "Zakk Ali",
             "image": "https://images.generated.photos/HmRkP5Zk88oODxk8XYBigDlLRtc5ad44vfyg2rr68e4/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTA0NDU3LmpwZw.jpg"
         },
-        "price": 5,
-        "duration": 2,
+        "price":  "💵💵💵💵💵",
+        "duration": "2",
         "hashtags": "#japanculture #sensojitemple #tokyo",
         "likes": "",
-        "activities": ""
+        "activities": "",
+        "city": "62a9e6040475afaa60b8d65d"
   },
   {
         "itinerary": "Piazza San Marco",
+         "image": "https://i.imgur.com/hKSbnUy.jpg",
         "creator": {
             "name": "Katey Saunders",
             "image": "https://images.generated.photos/45-mrLn8At8sKTFFbvV7N1sBYPi-CRwaZPgrBoyEdIs/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/MDIwMzg3LmpwZw.jpg"
         },
-        "price": 3,
-        "duration": 2,
+        "price":  "💵💵💵",
+        "duration": "2",
         "hashtags": "#veniceitaly #italytravel #italylandscape",
         "likes": "",
-        "activities": ""
+        "activities": "",
+        "city": "62aa0eda193db28bbf536d29"
   }
   
 ]
