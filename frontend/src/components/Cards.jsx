@@ -2,9 +2,7 @@ import '../styles/cards.css'
 import { useState } from 'react';
 import { Link as Linkrouter } from "react-router-dom";
 import Video from '../images/video-cities.mp4'
-// import axios from 'axios'
 import Noresults from '../components/Noresults'
-// import { connect } from 'react-redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import citiesActions from '../redux/actions/citiesActions';
@@ -23,7 +21,6 @@ function Cards() {
   }, [search]);
 
   const cities = useSelector(store => store.citiesReducer.filter)
-  // let cityFilter = cities?.filter(item => item.name.toLowerCase().startsWith(search.trim().toLowerCase()))
 
   return (
     <>

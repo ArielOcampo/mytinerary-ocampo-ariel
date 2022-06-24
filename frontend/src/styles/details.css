@@ -1,13 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
 .details-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fff;
+  justify-content: space-between;
   height: 50vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 30%;
   /* background-attachment: fixed; */
+}
+
+.details-title {
+
+  margin-top: 5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.5rem;
+  background-color: #1f293797;
+  font-family: 'Rubik', sans-serif;
+}
+
+.details-description {
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 2rem;
+  background-color: #1f293799;
+  font-family: 'Rubik', sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .details-title {
+    margin-top: 5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 20px;
+    padding: 0.5rem;
+    background-color: #1f2937;
+  }
+
+  .details-description {
+    font-size: 1rem;
+    color: #fff;
+    padding: 2rem;
+    background-color: #1f293799;
+  }
+}
+
+@media (max-width: 620px) {
+  .details-title {
+    margin-top: 5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 20px;
+    padding: 0.5rem;
+    background-color: #1f2937;
+  }
+
+  .details-description {
+    font-size: 0.8rem;
+    color: #fff;
+    padding: 2rem;
+    background-color: #1f293799;
+  }
 }

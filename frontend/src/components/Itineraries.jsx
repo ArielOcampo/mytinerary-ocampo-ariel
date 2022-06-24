@@ -1,19 +1,19 @@
 import React from 'react';
-// import Data from '../data.json'
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import '../styles/itinerariesDetails.css'
 import { useDispatch, useSelector } from 'react-redux';
 import citiesActions from '../redux/actions/citiesActions';
 import itinerariesActions from '../redux/actions/itinerariesActions';
 import ItinerariesDetails from './ItinerariesDetails';
 import { Link as Linkrouter } from 'react-router-dom'
+import noItineraries from '../images/no-itineraries.svg'
 
 
 
 function Itineraries() {
   const { id } = useParams()
-  // const [show, setShow] = useState(true);
+
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -21,7 +21,7 @@ function Itineraries() {
     dispatch(itinerariesActions.getItinerariesById(id))
     // eslint-disable-next-line
   }, []);
-  // const city = useSelector(store => store.citiesReducer.oneCity) 
+  // const city = useSelector(store => store.citiesReducer.oneCity)
 
   const itineraries = useSelector(store => store.itinerariesReducer.getItinerariesByCity)
   console.log(itineraries)
@@ -35,11 +35,12 @@ function Itineraries() {
     <div className="itineraries-background flex flex-wrap items-center justify-center w-full ">
       {itineraries.length > 0 ? (itineraries.map((item, index) => <ItinerariesDetails key={index} city={item} />)) :
 
-        (<div className='no-itineraries'><p>No itineraries yet</p><Linkrouter to='/cities'
-          className="inline-block  px-12 py-3 mt-8 text-sm font-medium text-white bg-blue-600 border border-indigo-600 rounded active:text-indigo-500 hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring"
-          href="/contact">Back to cities</Linkrouter></div>)
+        // eslint-disable-next-line jsx-a11y/alt-text
+        (<div className='no-itineraries'><img src={noItineraries} /> <p>No Itineraries yet!</p><div className='button-back-cities'><Linkrouter to='/cities'
+          className="font-itineraries flex justify-center focus:outline-none ml-0 md:ml-5 bg-indigo-700 dark:bg-indigo-600 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-3 md:px-6 py-2 text-sm mr-3"
+          href="/contact">Back to cities </Linkrouter ></div> </div>)
       }
-    </div>
+    </div >
 
   );
 }
