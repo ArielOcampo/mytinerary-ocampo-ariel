@@ -12,6 +12,9 @@ import ScrollTop from './components/ScrollTop'
 import { useEffect } from 'react';
 import citiesActions from './redux/actions/citiesActions';
 import { useDispatch } from 'react-redux'
+import SignUp from './components/SignUp';
+import LogIn from './components/LogIn';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -26,6 +29,16 @@ function App() {
     <>
       <div className='page-container'>
         <div className='content-wrap'>
+          <ToastContainer position="bottom-left"
+            theme='dark'
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover />
           <ScrollTop />
           <Navbar />
           <ScrollToTop smooth style={{ width: '48px', height: '48px', borderRadius: '50%' }} component={<MySVG />} />
@@ -36,6 +49,8 @@ function App() {
             <Route path='/*' element={<Error />} />
             <Route path='/cities' element={<Cities />} />
             <Route path='/citie/:id' element={<Details />} />
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='/login' element={<LogIn />} />
           </Routes>
         </div>
         <Footer />

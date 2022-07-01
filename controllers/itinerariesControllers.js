@@ -15,7 +15,7 @@ const itinerariesControllers = {
   },
   getItinerary: async (req, res) => {
     const id = req.params.id
-    let itynerary
+    let itinerary
     let error = null
     try {
       itinerary = await itineraries.findOne({ _id: id })

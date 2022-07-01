@@ -1,4 +1,3 @@
-
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
@@ -6,6 +5,7 @@ import Avatar from '../images/avatar.png'
 import Logo from '../images/logo.png';
 import '../styles/navbar.css'
 import { Link as LinkRouter } from "react-router-dom"
+
 
 const navigation = [
   { name: 'Home', to: "/", current: true },
@@ -94,20 +94,22 @@ export default function Example() {
                       <Menu.Item>
                         {({ active }) => (
                           <LinkRouter
-                            to="#"
+                            to="/signup"
                             className={classNames(active ? 'bg-blue-600' : '', 'block px-4 py-2 text-sm text-white')}
                           >
+
                             Sign up
+
                           </LinkRouter>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <LinkRouter
-                            to="#"
+                            to="login"
                             className={classNames(active ? 'bg-blue-600' : '', 'block px-4 py-2 text-sm text-white')}
                           >
-                            Sign in
+                            Log in
                           </LinkRouter>
                         )}
                       </Menu.Item>

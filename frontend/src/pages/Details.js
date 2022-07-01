@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 
 
+
 export default function Details() {
   const cities = useSelector(store => store.citiesReducer.oneCity)
 
