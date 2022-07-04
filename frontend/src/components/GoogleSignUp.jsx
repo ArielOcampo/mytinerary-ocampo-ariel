@@ -24,10 +24,10 @@ export default function GoogleSignUp() {
 
 
   async function handleCallbackResponse(response) {
-    console.log(response.credential);
+
 
     let userObject = jwt_decode(response.credential);
-    console.log(userObject);
+
 
     let res = await dispatch(userActions.signUpUsers({
       firstName: userObject.given_name,
