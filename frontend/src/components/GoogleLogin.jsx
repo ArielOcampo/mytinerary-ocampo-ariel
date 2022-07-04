@@ -1,49 +1,39 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import jwt_decode from 'jwt-decode';
 import { useDispatch } from 'react-redux';
 import userActions from '../redux/actions/userActions'
-import axios from 'axios'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { CLIENT_ID } from '../consts/google'
+import { useNavigate } from 'react-router-dom';
 
 
-export default function GoogleSignUp() {
+export default function GoogleLogin() {
+  const navigate = useNavigate()
   const dispatch = useDispatch();
-  const [country, setCountry] = useState({})
-
-
-
-  useEffect(() => {
-    axios.get("https://geolocation-db.com/json/0f761a30-fe14-11e9-b59f-e53803842572")
-      .then(response => {
-        const apiResponse = response;
-        setCountry(apiResponse)
-      })
-  }, []);
-
 
   async function handleCallbackResponse(response) {
-    console.log(response.credential);
+
 
     let userObject = jwt_decode(response.credential);
-    console.log(userObject);
 
-    let res = await dispatch(userActions.signUpUsers({
+
+    let res = await dispatch(userActions.loginUsers({
       firstName: userObject.given_name,
       lastName: userObject.family_name,
       userPhoto: userObject.picture,
       email: userObject.email,
-      country: country.data.country_name,
       password: userObject.sub,
       from: 'google'
     }))
 
     if (res.data.success) {
       toast.success(res.data.message)
+      navigate('/')
     } else {
       toast.error(res.data.message);
     }
+
   }
 
 
@@ -59,17 +49,14 @@ export default function GoogleSignUp() {
 
     google.accounts.id.renderButton(
       document.getElementById('buttonDiv'),
-      { theme: "filled_blue", size: "medium", shape: "pill", locale: "en-IN", text: "signup_with" },
+      { theme: "filled_blue", size: "medium", shape: "pill", locale: "en-IN", text: "register_with", },
 
     )
   });
 
   return (
-
-
     <div>
-
-      <div id='buttonDiv' >
+      <div id='buttonDiv'>
 
       </div>
     </div>

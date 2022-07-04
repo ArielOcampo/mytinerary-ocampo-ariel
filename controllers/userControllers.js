@@ -53,7 +53,6 @@ const userControllers = {
           //busco en la propiedad FROM
           //el indice que coincide con el FROM del cual el usuario quiere "volver" a registrarse
           //si ese indice EXISTE ==> el usuario ya está registrado DE ESTA FORMA y hay que mandarlo a loguearse
-          //ACLARACION: si existe indexOf(from) significa que el usuario ya se registró de esta manera (la que capturamos en la variable FROM)
           //entonces si el indice de from es cualquier numero que no sea -1 significa que ya existe el usuario y NO DEBEMOS PERMITIRLE volver a registrarse
           res.json({ //devolvemos la respuesta
             success: false,
@@ -68,11 +67,11 @@ const userControllers = {
           userExist.password.push(hashWord)
           userExist.verification = true
           userExist.from.push(from)
-          await newUser.save()
+          await userExist.save()
           res.json({
             success: true,
             from: from,
-            message: `check ${email} to confirm your SIGN UP!`
+            message: ` ${firstName} you are ready to Login!`
           })
         }
       }
@@ -104,20 +103,33 @@ const userControllers = {
         })
       } else { //si existe el usuario
         let checkedWord = loginUser.password.filter(pass => bcryptjs.compareSync(password, pass))
-        console.log(checkedWord)
+
         //filtramos en el array de contraseñas hasheadas si coincide la contraseña 
         if (from === "form-Signup") { //si fue registrado por nuestro formulario
-          if (checkedWord.length > 0) { //si hay coincidencias
+          if (loginUser.verification === false) {
+            res.json({
+              success: false,
+              from: from,
+              message: `check ${email} to confirm your SIGN UP!`
+            })
+
+
+          }
+          else if (checkedWord.length > 0) { //si hay coincidencias
             const userData = { //este objeto lo utilizaremos cuando veamos TOKEN
               id: loginUser._id,
               email: loginUser.email,
               firstName: loginUser.firstName,
-              // photoUser: loginUser.photoUser,
-              from: loginUser.from
+              userPhoto: loginUser.userPhoto,
+              from: loginUser.from,
+              success: true
             }
+
+            const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
             await loginUser.save()
+
             res.json({
-              response: userData,
+              response: { token, userData },
               success: true,
               from: from,
               message: `welcome back ${userData.firstName}!`
@@ -136,12 +148,13 @@ const userControllers = {
               id: loginUser._id,
               email: loginUser.email,
               firstName: loginUser.firstName,
-              // photoUser: loginUser.photoUser,
+              userPhoto: loginUser?.userPhoto,
               from: loginUser.from
             }
+            const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
             await loginUser.save()
             res.json({
-              response: userData,
+              response: { token, userData },
               success: true,
               from: from,
               message: `welcome back ${userData.firstName}!`
@@ -177,6 +190,24 @@ const userControllers = {
       res.json({
         success: false,
         message: `email has not account yet!`
+      })
+    }
+  },
+  verifyToken: (req, res) => {
+
+
+    if (req.user) {
+
+      res.json({
+        success: true,
+        response: { id: req.user.id, firstName: req.user.firstName, email: req.user.email, UserPhoto: req.user.userPhoto, from: "token" },
+        message: "Welcome backsadasd " + req.user.firstName,
+      })
+
+    } else {
+      res.json({
+        success: false,
+        message: "Please login again"
       })
     }
   }

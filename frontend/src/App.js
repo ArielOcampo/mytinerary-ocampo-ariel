@@ -15,13 +15,19 @@ import { useDispatch } from 'react-redux'
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import { ToastContainer } from 'react-toastify';
+import userActions from './redux/actions/userActions';
 
 function App() {
 
   const dispatch = useDispatch()
+
   useEffect(() => {
     dispatch(citiesActions.getCities())
+    if (localStorage.getItem('token') !== null) {
+      const token = localStorage.getItem('token')
+      dispatch(userActions.verifyToken(token))
 
+    }
     // eslint-disable-next-line
   }, [])
 

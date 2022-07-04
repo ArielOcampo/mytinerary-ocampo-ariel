@@ -5,6 +5,11 @@ import Avatar from '../images/avatar.png'
 import Logo from '../images/logo.png';
 import '../styles/navbar.css'
 import { Link as LinkRouter } from "react-router-dom"
+import { useSelector, useDispatch } from 'react-redux'
+import userActions from '../redux/actions/userActions';
+import { toast } from 'react-toastify';
+
+
 
 
 const navigation = [
@@ -17,7 +22,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+
 export default function Example() {
+  const dispatch = useDispatch()
+
+  const loginUser = useSelector(store => store.userReducer.user)
+
+
+
   return (
     <Disclosure as="nav" className="navbar" style={{ position: "sticky", top: 0, zIndex: 20, width: "100%" }}>
       {({ open }) => (
@@ -70,15 +82,24 @@ export default function Example() {
 
 
                 {/* Profile dropdown */}
+
+
                 <Menu as="div" className="ml-3 relative">
                   <div>
                     <Menu.Button className=" bg-blue-600 flex text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-blue-600 focus:ring-blue">
                       <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-10 w-10 rounded-full"
+
+                      {loginUser?.success ? <img
+                        src={loginUser?.user.UserPhoto}
+                        referrerPolicy="no-referrer"
+                        className="h-14 w-14 rounded-full "
+                        alt={loginUser?.user.firstName}
+                      /> : <img
+                        className="h-10 w-10 rounded-full "
                         src={Avatar}
                         alt="avatar"
-                      />
+                      />}
+
                     </Menu.Button>
                   </div>
                   <Transition
@@ -91,7 +112,7 @@ export default function Example() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="menu-avatar origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
+                      {loginUser.success ? "" : <Menu.Item>
                         {({ active }) => (
                           <LinkRouter
                             to="/signup"
@@ -102,8 +123,23 @@ export default function Example() {
 
                           </LinkRouter>
                         )}
-                      </Menu.Item>
-                      <Menu.Item>
+                      </Menu.Item>}
+
+
+                      {loginUser?.success ? <Menu.Item>
+                        {({ active }) => (
+                          <LinkRouter onClick={() => {
+                            toast("👋 Thanks for your visit")
+                            dispatch(userActions.signOut());
+
+                          }}
+                            to="home"
+                            className={classNames(active ? 'bg-blue-600' : '', 'block px-4 py-2 text-sm text-white')}
+                          >
+                            Log out
+                          </LinkRouter>
+                        )}
+                      </Menu.Item> : <Menu.Item>
                         {({ active }) => (
                           <LinkRouter
                             to="login"
@@ -112,20 +148,12 @@ export default function Example() {
                             Log in
                           </LinkRouter>
                         )}
-                      </Menu.Item>
-                      {/* <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
-                          </a>
-                        )}
-                      </Menu.Item> */}
+                      </Menu.Item>}
+
                     </Menu.Items>
                   </Transition>
                 </Menu>
+
               </div>
             </div>
           </div>
