@@ -8,6 +8,7 @@ import { Link as LinkRouter } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux'
 import userActions from '../redux/actions/userActions';
 import { toast } from 'react-toastify';
+import { useEffect } from 'react';
 
 
 
@@ -24,11 +25,12 @@ function classNames(...classes) {
 
 
 export default function Example() {
-  const dispatch = useDispatch()
-
   const loginUser = useSelector(store => store.userReducer.user)
 
 
+
+
+  const dispatch = useDispatch()
 
   return (
     <Disclosure as="nav" className="navbar" style={{ position: "sticky", top: 0, zIndex: 20, width: "100%" }}>
@@ -89,11 +91,11 @@ export default function Example() {
                     <Menu.Button className=" bg-blue-600 flex text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-blue-600 focus:ring-blue">
                       <span className="sr-only">Open user menu</span>
 
-                      {loginUser?.success ? <img
-                        src={loginUser?.user.UserPhoto}
+                      {loginUser.success ? <img
                         referrerPolicy="no-referrer"
                         className="h-14 w-14 rounded-full "
                         alt={loginUser?.user.firstName}
+                        src={loginUser?.user.UserPhoto}
                       /> : <img
                         className="h-10 w-10 rounded-full "
                         src={Avatar}

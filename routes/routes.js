@@ -11,6 +11,13 @@ const { signUpUsers, loginUser, verifyEmail, verifyToken } = userControllers
 //PASSPORT
 const passport = require('../config/passport')
 const validator = require('../config/validator')
+//ACTIVITIES
+const activitiesControllers = require('../controllers/activitiesControllers');
+const { getActivities, uploadActivity, deleteAct, modifyAct, oneActivity, findActFromTin } = activitiesControllers
+
+
+
+
 
 //*******ROUTES*********
 //CITIES
@@ -48,5 +55,17 @@ Router.route("/verify/:string")
 //LOGIN TOKEN
 Router.route('/logintoken')
   .get(passport.authenticate('jwt', { session: false }), verifyToken)
+//ACTIVITY
+Router.route('/activities')
+  .get(getActivities)
+  .post(uploadActivity)
+
+Router.route('/activities/:id')
+  .delete(deleteAct)
+  .put(modifyAct)
+  .get(oneActivity)
+
+Router.route('/activitiesfromttineraries')
+  .post(findActFromTin)
 
 module.exports = Router

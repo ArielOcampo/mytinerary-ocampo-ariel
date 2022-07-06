@@ -1,15 +1,38 @@
 import React from 'react'
 import "../styles/itinerariesDetails.css"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Heart from '../images/heart.svg'
 import ArrowD from '../images/arrow-down.svg'
 import ArrowU from '../images/arrow-up.svg'
 import { Link as Linkrouter } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import activitiesActions from '../redux/actions/activitiesActions';
+import CardsActivities from '../components/CardsActivities';
+
 
 
 const ItinerariesDetails = (city) => {
+  console.log(city)
   let data = city.city
   const [show, setShow] = useState(true);
+  const [activities, setActivities] = useState()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    getActions()
+    // eslint-disable-next-line
+  }, [])
+  async function getActions() {
+    let actions = await dispatch(activitiesActions?.findActFromTin(data._id))
+
+    if (actions.response.length > 0) setActivities(actions.response[0]?.activities)
+  }
+  useEffect(() => {
+    getActions()
+    // eslint-disable-next-line
+  }, [])
+
+  console.log(activities)
   return (
 
     <div className="itineraries-cards bg-white dark:bg-gray-800 shadow rounded my-10 w-full">
@@ -72,80 +95,13 @@ const ItinerariesDetails = (city) => {
       {/* VIEW MORE */}
 
       {!show && (
+        <div className='flex ml-12'>
+          <div className=' order-first'>
+            {activities !== undefined ? (<CardsActivities props={activities} />) : ("No activities yet")}
 
-        <div className="flex items-center justify-between w-full p-5">
-          <div className="flex flex-col lg:flex-row w-full items-start lg:items-center rounded bg-white shadow">
-            <div className="w-full lg:w-2/3 h-64 dark:bg-gray-800" style={{ backgroundImage: `url(https://s27363.pcdn.co/wp-content/uploads/2021/09/Travel-Itineraries.jpg.optimal.jpg)`, objectFit: "cover", backgroundSize: "cover", backgroundPosition: "center" }}><img src="" alt="" /> </div>
-            <div className="flex justify-center items-center w-full lg:w-1/3 h-24 dark:border-gray-700 lg:h-64 border-t lg:border-t-0 lg:border-r lg:border-l lg:rounded-r dark:bg-gray-700 bg-gray-100"> <p className='text-2xl   text-blue-900'>Upcoming events</p> </div>
           </div>
         </div>
 
-
-
-
-        // <div className="w-full flex items-center justify-center">
-        //   <div className="py-4 sm:py-6 md:py-8 bg-white shadow rounded-lg">
-        //     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 xl:px-10 gap-y-8 gap-x-12 2xl:gap-x-28">
-        //       <div className="w-full">
-        //         <p className="text-xs md:text-sm font-medium leading-none text-gray-500 uppercase">Sales</p>
-        //         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-3 text-gray-800 mt-3 md:mt-5">89.5%</p>
-        //         <div className="flex flex-col md:w-64">
-        //           <div className="w-full flex justify-end">
-        //             <div className="flex items-center">
-        //               <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" fill="none">
-        //                 <path d="M8 3.33334V12.6667" stroke="#16A34A" strokeLinecap="round" strokeLinejoin="round" />
-        //                 <path d="M12 7.33334L8 3.33334" stroke="#16A34A" strokeLinecap="round" strokeLinejoin="round" />
-        //                 <path d="M4 7.33334L8 3.33334" stroke="#16A34A" strokeLinecap="round" strokeLinejoin="round" />
-        //               </svg>
-        //               <p className="text-xs leading-none text-green-600">4.3%</p>
-        //             </div>
-        //           </div>
-        //           <div className="mt-2.5">
-        //             <div className="w-full h-1 bg-gray-200 rounded-full">
-        //               <div className="w-1/2 h-1 bg-blue-500 rounded-full" />
-        //             </div>
-        //           </div>
-        //         </div>
-        //         <p className="mt-1.5 text-xs leading-3 text-gray-400">Yearly target</p>
-        //       </div>
-        //       <div className="w-full">
-        //         <p className="text-xs md:text-sm font-medium leading-none text-gray-500 uppercase">revenue</p>
-        //         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-3 text-gray-800 mt-3 md:mt-5">$75,000</p>
-        //         <div className="flex flex-col">
-        //           <div className="h-4" />
-        //           <div className="md:w-64 mt-2.5">
-        //             <div className="w-full h-1 bg-gray-200 rounded-full">
-        //               <div className="w-40 h-1 bg-lime-500 rounded-full" />
-        //             </div>
-        //           </div>
-        //         </div>
-        //         <p className="mt-1.5 text-xs leading-3 text-gray-400">Yearly target</p>
-        //       </div>
-        //       <div className="w-full">
-        //         <p className="text-xs md:text-sm font-medium leading-none text-gray-500 uppercase">customers</p>
-        //         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-3 text-gray-800 mt-3 md:mt-5">3922</p>
-        //         <div className="flex flex-col md:w-64">
-        //           <div className="w-full flex justify-end">
-        //             <div className="flex items-center">
-        //               <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" fill="none">
-        //                 <path d="M8 3.33334V12.6667" stroke="#16A34A" strokeLinecap="round" strokeLinejoin="round" />
-        //                 <path d="M12 7.33334L8 3.33334" stroke="#16A34A" strokeLinecap="round" strokeLinejoin="round" />
-        //                 <path d="M4 7.33334L8 3.33334" stroke="#16A34A" strokeLinecap="round" strokeLinejoin="round" />
-        //               </svg>
-        //               <p className="text-xs leading-none text-green-600">9.1%</p>
-        //             </div>
-        //           </div>
-        //           <div className="mt-2.5">
-        //             <div className="w-full h-1 bg-gray-200 rounded-full">
-        //               <div className="w-44 h-1 bg-yellow-500 rounded-full" />
-        //             </div>
-        //           </div>
-        //         </div>
-        //         <p className="mt-1.5 text-xs leading-3 text-gray-400">Yearly target</p>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </div>
       )}
     </div >
   )

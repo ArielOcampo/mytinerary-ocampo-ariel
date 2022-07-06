@@ -5,7 +5,7 @@ const citiesControllers = {
     let cities
     let error = null
     try {
-      cities = await Cities.find()
+      cities = await Cities.find().populate('itinerary', { creator: 1, itinerary: 1 })
     } catch (err) { error = err }
     res.json({
       response: error ? 'ERROR' : { cities },
@@ -31,7 +31,7 @@ const citiesControllers = {
     })
   },
   addCity: async (req, res) => {
-    const { name, country, image, description, cantidad } = req.body
+    const { name, country, image, description, itinerary } = req.body
     let city
     let error = null
     try {
@@ -40,6 +40,8 @@ const citiesControllers = {
         country: country,
         image: image,
         description: description,
+        itinerary: itinerary
+
 
       }).save()
 

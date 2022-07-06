@@ -6,21 +6,34 @@ import Noresults from '../components/Noresults'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import citiesActions from '../redux/actions/citiesActions';
+import Avatars from '../components/Avatars';
+
+// import itinerariesActions from '../redux/actions/itinerariesActions';
 
 function Cards() {
 
   const [search, setSearch] = useState('');
-
+  // const [itineraries, setItineraries] = useState([])
   const dispatch = useDispatch()
+
+  // async function itinerariesInCities() {
+  //   const res = await dispatch(itinerariesActions.getItineraries())
+  //   setItineraries(res.data.response.itinerary)
+  // }
 
   useEffect(() => {
     dispatch(citiesActions.filterCities(search))
-
-
     // eslint-disable-next-line
   }, [search]);
 
+  // useEffect(() => {
+  //   itinerariesInCities()
+  // }, [])
+
+
+
   const cities = useSelector(store => store.citiesReducer.filter)
+
 
   return (
     <>
@@ -57,11 +70,13 @@ function Cards() {
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white text-center">{item.name}<p className='font-medium'>({item.country})</p></h5>
 
                   <p className="mb-3 text-cards font-normal text-gray-400 dark:text-gray-400">{item.description}</p>
+                  <Avatars prop={item.itinerary} />
                   <div className='flex justify-end'>
                     <Linkrouter to={`/citie/${item._id}`} className="flex-inline  justify-end items-center  py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                       See more
                     </Linkrouter>
                   </div>
+
                 </div>
               </div >
             )

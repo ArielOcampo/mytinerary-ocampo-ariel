@@ -212,3 +212,78 @@
   }
   
 ]
+
+//ACTIVITIES
+
+{"activities": 
+    [{"title": "Ferrari World Entrance ticket + Free Meal",
+      "img": "https://media.tacdn.com/media/photo-o/1a/81/49/de/img-20200103-132928-largejpg.jpg"},
+    {"title": "Abu Dhabi City Tour Private",
+     "img": "https://media.tacdn.com/media/attractions-splice-spp-674x446/0c/02/5d/9a.jpg"},
+    {"title":"Go City: Dubai Explorer Pass",
+    "img":"https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/ff/bf/84.jpg"}
+    ],
+"itinerary":"62b45f4fa71e77529ba76521"
+
+
+},
+{"activities": 
+    [{"title": "Big Bus Dubai Hop-On Hop-Off Tour",
+      "img": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/68/cf/6c.jpg"},
+    {"title": "Dubai Helicopter Tour",
+     "img": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/19/7f/03.jpg"},
+    {"title":"90min Dubai Speed Boat Tour: Burj Al Arab, Atlantis & Palm",
+    "img":"https://media.tacdn.com/media/attractions-splice-spp-674x446/09/b1/b8/18.jpg"}
+    ],
+"itinerary":"62b4dac8cdbabda26d451fec"
+
+
+},
+{"activities": 
+    [{"title": "Day Trip To Tulum and Coba Ruins Including Cenote Swim and Lunch from Cancun",
+      "img": "https://media.tacdn.com/media/photo-m/1280/1c/d6/f5/f1/caption.jpg"},
+    {"title": "Tulum Skip the Line & Tequila Tasting",
+     "img": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/67/b1/47.jpg"},
+    {"title":"Day Trip: Tulum Ruins and Swimming with Turtles in Akumal",
+    "img":"https://media.tacdn.com/media/attractions-splice-spp-674x446/07/36/ac/88.jpg"}
+    ],
+"itinerary":"62b4d6de4f352c0df9f13d92"
+
+
+},
+{"activities": 
+    [{"title": "Half-Day Luxury Sailing Experience in Tulum with Open Bar",
+      "img": "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/93/e1/a5.jpg"},
+    {"title": "Cenotes Sac Actun, Tulum",
+     "img": "https://s.inspirockcdn.com/ds10/photos/Mexico/f/cenotes-sac-actun-1274115246.jpg"},
+    {"title":"Climbing Tours, Tulum",
+    "img":"https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/24/9d/9e.jpg"}
+    ],
+"itinerary":"62b4d6f04f352c0df9f13d94"
+
+
+},
+{"activities": 
+    [{"title": "Tokyo Private Custom Walking Tour with local friendly guide",
+      "img": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6f/5d/2d.jpg"},
+    {"title": "Geisha Experience at Chaya in Tokyo",
+     "img": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/70/61/32.jpg"},
+    {"title":"Scenic Spots of Mt Fuji and Lake Kawaguchi 1 Day Bus Tour",
+    "img":"https://media.tacdn.com/media/attractions-splice-spp-674x446/07/17/ae/61.jpg"}
+    ],
+"itinerary":"62b4d7344f352c0df9f13d9c"
+
+
+},
+{"activities": 
+    [{"title": "Big Bus Sydney and Bondi Hop-on Hop-off Tour",
+      "img": "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/c5/d2/d1.jpg"},
+    {"title": "Sydney Bike Tours",
+     "img": "https://media.tacdn.com/media/attractions-splice-spp-674x446/08/81/df/c1.jpg"},
+    {"title":"Sydney Harbour Luxury Sailing Trip including Lunch",
+    "img":"https://media.tacdn.com/media/attractions-splice-spp-674x446/06/bd/e7/20.jpg"}
+    ],
+"itinerary":"62b4d7234f352c0df9f13d9a"
+
+
+}

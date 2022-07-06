@@ -38,7 +38,7 @@ const userControllers = {
           })
         } else { //si la data viene de una red social
           await newUser.save()
-          await sendVerificationMail(email, uniqueString)
+          // await sendVerificationMail(email, uniqueString)
           res.json({
             success: true,
             from: from,
@@ -124,9 +124,9 @@ const userControllers = {
               from: loginUser.from,
               success: true
             }
-
-            const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
             await loginUser.save()
+            const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
+
 
             res.json({
               response: { token, userData },

@@ -4,11 +4,13 @@ import Cards from "../components/Cards"
 
 
 
+
 export default function Cities() {
   return (
+    <>
 
-    <Cards />
-
+      <Cards />
+    </>
 
   );
 }

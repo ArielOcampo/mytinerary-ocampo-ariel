@@ -11,7 +11,7 @@ import { ReactComponent as MySVG } from "../src/images/up-icon.svg";
 import ScrollTop from './components/ScrollTop'
 import { useEffect } from 'react';
 import citiesActions from './redux/actions/citiesActions';
-import { useDispatch } from 'react-redux'
+import { useDispatch, } from 'react-redux'
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import { ToastContainer } from 'react-toastify';
