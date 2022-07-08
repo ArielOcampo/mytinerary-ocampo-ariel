@@ -21,13 +21,9 @@ function Itineraries() {
     dispatch(itinerariesActions.getItinerariesById(id))
     // eslint-disable-next-line
   }, []);
-  // const city = useSelector(store => store.citiesReducer.oneCity)
+
 
   const itineraries = useSelector(store => store.itinerariesReducer.getItinerariesByCity)
-  console.log(itineraries)
-
-
-
 
   return (
 

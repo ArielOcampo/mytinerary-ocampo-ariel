@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const commentsActions = {
   addComment: (comment) => {
-    console.log(comment)
+
     const token = localStorage.getItem('token')
     return async (dispatch, getState) => {
 
@@ -13,27 +13,19 @@ const commentsActions = {
           }
 
         })
-        console.log(res)
-        dispatch({
-          type: 'message',
-          payload: {
-            view: true,
-            message: res.data.message,
-            success: res.data.success
-          }
-        })
         return res
-      }
-      else {
+
+      } else {
         dispatch({
           type: 'message',
           payload: {
             view: true,
-            message: "ingresa un comentario para guardarlo",
+            message: "Write a comment to save it",
             success: false
           }
         })
       }
+
     }
 
   },

@@ -3,18 +3,35 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cube";
+import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import { Autoplay, EffectCube, Pagination } from "swiper";
+import { Autoplay, EffectCube, Pagination, EffectCoverflow } from "swiper";
 import '../styles/cardsactivities.css'
 
 const CardsActivities = (props) => {
   let activities = props.props
-  console.log(activities)
+
   return (
     <>
-
       <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+      >
+        {/* <Swiper
+
         effect={"cube"}
         grabCursor={true}
         cubeEffect={{
@@ -22,26 +39,33 @@ const CardsActivities = (props) => {
           slideShadows: true,
           shadowOffset: 20,
           shadowScale: 0.94,
+
+
         }}
         autoplay={{
-          delay: 1500,
+          delay: 2000,
           disableOnInteraction: false
         }}
         pagination={true}
         modules={[EffectCube, Pagination, Autoplay]}
         className="mySwiper"
-      >
+      > */}
 
-        {activities?.map(item =>
+        {activities?.map((item, index) =>
 
-          <SwiperSlide>
+          <SwiperSlide key={index}>
             <div
               style={{
                 backgroundImage: `url("${item.img}")`,
                 backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat"
-              }} className="imgCubo"
+              }} className="imgCubo "
             >
-              <h1>{item.title}</h1>
+
+              <h4 className="title-cube">{item.title}</h4>
+
+
+
+
             </div>
           </SwiperSlide>
         )}

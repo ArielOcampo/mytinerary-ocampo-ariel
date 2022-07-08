@@ -8,12 +8,12 @@ const commentsControllers = {
 
     try {
       const newComment = await itineraries.findOneAndUpdate({ _id: itineraryId }, { $push: { comments: { comment: comment, user: user, date: Date.now() } } }, { new: true })
-      res.json({ success: true, response: { newComment }, message: "gracias por dejarnos tu comentario" })
+      res.json({ success: true, response: { newComment }, message: "Thanks for your comment" })
 
     }
     catch (error) {
       console.log(error)
-      res.json({ success: false, message: "Thanks for your comment" })
+      res.json({ success: false, message: "Something went wrong try again in a few minutes" })
     }
 
   },
