@@ -33,7 +33,7 @@ function Itineraries() {
 
 
     <div className="itineraries-background flex flex-wrap items-center justify-center w-full ">
-      {itineraries.length > 0 ? (itineraries.map((item, index) => <ItinerariesDetails key={index} city={item} />)) :
+      {itineraries?.length > 0 ? (itineraries?.map((item, index) => <ItinerariesDetails key={index} city={item} cityId={id} />)) :
 
         // eslint-disable-next-line jsx-a11y/alt-text
         (<div className='no-itineraries'><img src={noItineraries} /> <p>No Itineraries yet!</p><div className='button-back-cities'><Linkrouter to='/cities'

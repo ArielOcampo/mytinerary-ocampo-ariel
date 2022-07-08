@@ -18,7 +18,7 @@ const itinerariesControllers = {
     let itinerary
     let error = null
     try {
-      itinerary = await itineraries.findOne({ _id: id })
+      itinerary = await itineraries.findOne({ _id: id }).populate('comments.user', { firstName: 1, userPhoto: 1 })
     } catch (err) {
       error = err
       console.log(error)
@@ -97,7 +97,27 @@ const itinerariesControllers = {
       success: error ? false : true,
       error: error
     })
-  }
+  },
+  likeDislike: async (req, res) => {
+    const id = req.params.id
+    const user = req.user.id
+
+    await itineraries.findOne({ _id: id })
+
+      .then((itinerary) => {
+
+        if (itinerary.likes.includes(user)) {
+          itineraries.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })
+            .then((response) => res.json({ success: true, response: response.likes }))
+            .catch((error) => console.log(error))
+        } else {
+          itineraries.findOneAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })
+            .then((response) => res.json({ success: true, response: response.likes }))
+            .catch((error) => console.log(error))
+        }
+      })
+      .catch((error) => res.json({ success: false, response: error }))
+  },
 }
 
 module.exports = itinerariesControllers

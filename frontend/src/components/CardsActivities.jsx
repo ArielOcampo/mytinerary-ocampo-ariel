@@ -5,11 +5,12 @@ import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 
-import { EffectCube, Pagination } from "swiper";
+import { Autoplay, EffectCube, Pagination } from "swiper";
 import '../styles/cardsactivities.css'
 
 const CardsActivities = (props) => {
   let activities = props.props
+  console.log(activities)
   return (
     <>
 
@@ -22,8 +23,12 @@ const CardsActivities = (props) => {
           shadowOffset: 20,
           shadowScale: 0.94,
         }}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: false
+        }}
         pagination={true}
-        modules={[EffectCube, Pagination]}
+        modules={[EffectCube, Pagination, Autoplay]}
         className="mySwiper"
       >
 

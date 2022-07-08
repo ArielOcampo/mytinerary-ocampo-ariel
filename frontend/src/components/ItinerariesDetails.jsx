@@ -5,41 +5,61 @@ import Heart from '../images/heart.svg'
 import ArrowD from '../images/arrow-down.svg'
 import ArrowU from '../images/arrow-up.svg'
 import { Link as Linkrouter } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import activitiesActions from '../redux/actions/activitiesActions';
 import CardsActivities from '../components/CardsActivities';
+import itinerariesActions from '../redux/actions/itinerariesActions';
+import Comments from '../components/Comments';
 
 
 
-const ItinerariesDetails = (city) => {
-  console.log(city)
-  let data = city.city
+const ItinerariesDetails = ({ city, cityId }) => {
+
+  let data = city
+  console.log(data)
   const [show, setShow] = useState(true);
   const [activities, setActivities] = useState()
+  const [reload, setReload] = useState(false)
+  const [oneItinerary, setOneItinerary] = useState()
   const dispatch = useDispatch()
+  const itineraries = useSelector(store => store.itinerariesReducer.getItinerariesByCity)
 
-  useEffect(() => {
-    getActions()
-    // eslint-disable-next-line
-  }, [])
+  //Funcion para traer las actividades
   async function getActions() {
     let actions = await dispatch(activitiesActions?.findActFromTin(data._id))
-
-    if (actions.response.length > 0) setActivities(actions.response[0]?.activities)
+    setActivities(actions.response[0]?.activities)
   }
+  //Función para Likes que se ejecuta con onclick
+  async function likeDislike() {
+    await dispatch(itinerariesActions.likeDislike(data._id))
+    setReload(!reload)
+  }
+  async function getItinerary() {
+    const res = await dispatch(itinerariesActions.getItinerary(city._id))
+    setOneItinerary(res)
+
+
+  }
+  //UseEffect para poder actualizar los likes en pantalla(reload escucha cuando algo cambia)
+  useEffect(() => {
+    dispatch(itinerariesActions.getItinerariesById(cityId))
+    // eslint-disable-next-line
+  }, [reload])
+  //UseEffect que ejecuta la función de las actividades y [itineraries] escucha los cambios y renderiza las imagenes de esas actividades
   useEffect(() => {
     getActions()
+    getItinerary()
     // eslint-disable-next-line
-  }, [])
+  }, [itineraries])
 
-  console.log(activities)
+
   return (
 
     <div className="itineraries-cards bg-white dark:bg-gray-800 shadow rounded my-10 w-full">
       <div className="relative " >
         <img className="image-itineraries h-96 shadow rounded-t w-full object-cover object-center" src={data.image} alt="Photograpy city" />
         <div className="image-perfil inset-0 m-auto w-24 h-24 absolute bottom-0 -mb-12 xl:ml-10 rounded border-2 shadow border-white">
-          <img className=" w-full h-full overflow-hidden object-cover rounded" src={data.creator.image} alt="Photograpy city" />
+          <img className=" w-full h-full overflow-hidden object-cover rounded" src={data.creator?.image} alt="Photograpy city" />
         </div>
       </div>
 
@@ -72,8 +92,8 @@ const ItinerariesDetails = (city) => {
               <p className="font-data-itineraries flex text-white dark:text-gray-100 text-sm xl:text-lg leading-5">Duration 🕓</p>
             </div>
             <div>
-              <h2 className="font-data-itineraries text-white dark:text-gray-400 font-bold text-xl xl:text-1xl leading-6 mb-2 text-center">5</h2>
-              <button className="font-data-itineraries text-gray-800 dark:text-gray-100 text-sm xl:text-lg leading-5"><img src={Heart} alt="" /></button>
+              <h2 className="font-data-itineraries text-white dark:text-gray-400 font-bold text-xl xl:text-1xl leading-6 mb-2 text-center">{data?.likes.length}</h2>
+              <button onClick={likeDislike} className="font-data-itineraries text-gray-800 dark:text-gray-100 text-sm xl:text-lg leading-5"><img src={Heart} alt="" /></button>
 
             </div>
           </div>
@@ -94,15 +114,21 @@ const ItinerariesDetails = (city) => {
 
       {/* VIEW MORE */}
 
-      {!show && (
-        <div className='flex ml-12'>
-          <div className=' order-first'>
-            {activities !== undefined ? (<CardsActivities props={activities} />) : ("No activities yet")}
+      {
+        !show && (
+          <div className='container flex flex-wrap justify-between  '>
+            <div className=' order-first'>
+              {activities !== undefined ? (<CardsActivities props={activities} />) : ("No activities yet")}
+            </div>
+            <div className=' md:mt-0 mt-16 w-3/5'>
+              <Comments comments={oneItinerary} />
+
+            </div>
 
           </div>
-        </div>
 
-      )}
+        )
+      }
     </div >
   )
 }

@@ -148,7 +148,7 @@ const userControllers = {
               id: loginUser._id,
               email: loginUser.email,
               firstName: loginUser.firstName,
-              userPhoto: loginUser?.userPhoto,
+              userPhoto: loginUser.userPhoto,
               from: loginUser.from
             }
             const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })

@@ -45,7 +45,7 @@ const activityActions = {
     return async () => {
       try {
         let answer = await axios.post(urlHost + `api/activitiesfromttineraries`, { id })
-        console.log(answer)
+
         return { //NO DESPACHA! RETURNA PARA SETEAR UN HOOK COMÚN
           success: true, response: answer.data.response.activities
         }

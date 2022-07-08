@@ -4,7 +4,7 @@ const citiesControllers = require('../controllers/citiesControllers')
 const { getCities, getOneCity, addCity, modifyCity, removeCity } = citiesControllers
 //ITINERARIES
 const itinerariesControllers = require('../controllers/itinerariesControllers')
-const { getItineraries, getItinerary, addItinerary, modifyItinerary, removeItinerary, getItinerariesById } = itinerariesControllers
+const { getItineraries, getItinerary, addItinerary, modifyItinerary, removeItinerary, getItinerariesById, likeDislike } = itinerariesControllers
 //USERS
 const userControllers = require('../controllers/userControllers')
 const { signUpUsers, loginUser, verifyEmail, verifyToken } = userControllers
@@ -14,7 +14,9 @@ const validator = require('../config/validator')
 //ACTIVITIES
 const activitiesControllers = require('../controllers/activitiesControllers');
 const { getActivities, uploadActivity, deleteAct, modifyAct, oneActivity, findActFromTin } = activitiesControllers
-
+//COMMENTS 
+const commentsControllers = require('../controllers/commentsControllers')
+const { addComment, modifyComment, deleteComment } = commentsControllers
 
 
 
@@ -43,6 +45,8 @@ Router.route('/itineraries/:id')
 Router.route('/itinerariesbycity/:id')
   .get(getItinerariesById)
 
+Router.route("/itineraries/like/:id")
+  .put(passport.authenticate("jwt", { session: false }), likeDislike)
 //USERS
 Router.route('/signUp')
   .post(validator, signUpUsers)
@@ -67,5 +71,11 @@ Router.route('/activities/:id')
 
 Router.route('/activitiesfromttineraries')
   .post(findActFromTin)
+//COMMENTS
+Router.route('/comments')
+  .post(passport.authenticate('jwt', { session: false }), addComment)
+  .put(passport.authenticate('jwt', { session: false }), modifyComment)
+Router.route('/comments/:id')
+  .post(passport.authenticate('jwt', { session: false }), deleteComment)
 
 module.exports = Router

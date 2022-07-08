@@ -16,6 +16,7 @@ import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import { ToastContainer } from 'react-toastify';
 import userActions from './redux/actions/userActions';
+import Comments from './components/Comments';
 
 function App() {
 
@@ -57,6 +58,7 @@ function App() {
             <Route path='/citie/:id' element={<Details />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/login' element={<LogIn />} />
+            <Route path='/itineraries/:id' element={<Comments />} />
           </Routes>
         </div>
         <Footer />

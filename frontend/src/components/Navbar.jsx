@@ -10,27 +10,27 @@ import userActions from '../redux/actions/userActions';
 import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 
-
-
-
 const navigation = [
   { name: 'Home', to: "/", current: true },
   { name: 'Cities', to: "cities", current: false },
 
 ]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 
 export default function Example() {
-  const loginUser = useSelector(store => store.userReducer.user)
-
-
-
-
   const dispatch = useDispatch()
+  const loginUser = useSelector(store => store.userReducer.user)
+  // useEffect(() => {
+
+  // }, [loginUser])
+
+  // console.log(loginUser)
+
+
+
 
   return (
     <Disclosure as="nav" className="navbar" style={{ position: "sticky", top: 0, zIndex: 20, width: "100%" }}>
@@ -94,8 +94,8 @@ export default function Example() {
                       {loginUser.success ? <img
                         referrerPolicy="no-referrer"
                         className="h-14 w-14 rounded-full "
-                        alt={loginUser?.user.firstName}
-                        src={loginUser?.user.UserPhoto}
+                        alt={loginUser.user.firstName}
+                        src={loginUser.user?.UserPhoto}
                       /> : <img
                         className="h-10 w-10 rounded-full "
                         src={Avatar}
