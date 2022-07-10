@@ -3,8 +3,10 @@ const bcryptjs = require('bcryptjs')
 const crypto = require('crypto');
 const sendVerificationMail = require('../controllers/sendVerificationMail')
 const jwt = require('jsonwebtoken')
-
+const urlHerokuFront = "https://mytinerary-ocampoa.herokuapp.com/"
+const urlLocal = "http://localhost:4000/"
 const userControllers = {
+
 
   signUpUsers: async (req, res) => {
     let { firstName, lastName, email, password, userPhoto, country, from } = req.body.userData
@@ -184,7 +186,7 @@ const userControllers = {
     if (user) {
       user.verification = true
       await user.save()
-      res.redirect("http://localhost:3000")
+      res.redirect(`${urlHerokuFront}`)
     }
     else {
       res.json({

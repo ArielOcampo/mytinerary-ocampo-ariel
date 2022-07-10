@@ -8,7 +8,7 @@ const passport = require("passport")
 const Router = require('./routes/routes')
 
 
-const PORT = 4000
+const PORT = process.env.PORT || 4000;
 var cors = require('cors')
 const app = express()
 //middlewares
