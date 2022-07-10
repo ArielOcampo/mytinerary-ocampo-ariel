@@ -34,7 +34,7 @@ const itinerariesActions = {
             'Authorization': 'Bearer ' + token
           }
         })
-        console.log(res)
+
         return res
 
       } catch (err) {

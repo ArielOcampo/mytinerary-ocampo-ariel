@@ -1,5 +1,7 @@
 const initialState = {
-  user: {},
+  user: {
+
+  },
   notification: {
     view: false,
     message: '',
@@ -21,7 +23,6 @@ const userReducer = (state = initialState, action) => {
     case 'user':
       return {
         ...state,
-
         user: action.payload
 
       }

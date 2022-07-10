@@ -1,7 +1,22 @@
 .container-comments {
   width: 100%;
+  height: auto;
 }
 
 .text-comments {
   width: 40vw;
+  word-wrap: break-word;
+  height: auto;
+}
+
+.container-text-area {
+  width: 60vw;
+  margin-right: 5px;
+  margin-left: 5px
+}
+
+.text-area {
+  width: 100%;
+  ;
+
 }

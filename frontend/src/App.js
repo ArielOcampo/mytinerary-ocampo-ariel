@@ -23,6 +23,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
+
     dispatch(citiesActions.getCities())
     if (localStorage.getItem('token') !== null) {
       const token = localStorage.getItem('token')
@@ -39,7 +40,9 @@ function App() {
           <ToastContainer position="bottom-left"
             theme='dark'
             autoClose={5000}
+
             hideProgressBar={false}
+            limit={3}
             newestOnTop={false}
             closeOnClick
             rtl={false}
@@ -56,8 +59,9 @@ function App() {
             <Route path='/*' element={<Error />} />
             <Route path='/cities' element={<Cities />} />
             <Route path='/citie/:id' element={<Details />} />
-            <Route path='/signup' element={<SignUp />} />
-            <Route path='/login' element={<LogIn />} />
+            {/* <Route path='/signup' element={<SignUp />} /> */}
+            {localStorage.getItem('token') ? <Route path='/login' element={<Error />} /> : <Route path='/login' element={<LogIn />} />}
+            {localStorage.getItem('token') ? <Route path='/signup' element={<Error />} /> : <Route path='/signup' element={<SignUp />} />}
             <Route path='/itineraries/:id' element={<Comments />} />
           </Routes>
         </div>

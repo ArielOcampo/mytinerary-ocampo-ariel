@@ -21,7 +21,7 @@ const commentsControllers = {
     const { commentId, comment } = req.body.comment
     try {
       const newComment = await itineraries.findOneAndUpdate({ "comments._id": commentId }, { $set: { "comments.$.comment": comment, "comments.$.date": Date.now() } }, { new: true })
-      console.log(newComment)
+
       res.json({ success: true, response: { newComment }, message: "Your comment has been modified" })
 
     }
@@ -36,7 +36,7 @@ const commentsControllers = {
     const user = req.user._id
     try {
       const deleteComment = await itineraries.findOneAndUpdate({ "comments._id": id }, { $pull: { comments: { _id: id } } }, { new: true })
-      console.log(deleteComment)
+
       res.json({ success: true, response: { deleteComment }, message: "This message has been deleted" })
 
     }

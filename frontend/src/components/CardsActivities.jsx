@@ -27,7 +27,11 @@ const CardsActivities = (props) => {
           slideShadows: true,
         }}
         pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
+        autoplay={{
+          delay: 2000,
+
+        }}
         className="mySwiper"
       >
         {/* <Swiper

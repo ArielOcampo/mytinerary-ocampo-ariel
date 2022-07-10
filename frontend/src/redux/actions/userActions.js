@@ -40,7 +40,7 @@ const userActions = {
           })
 
         }
-        console.log(res)
+
         return res
       } catch (error) {
         console.log(error);
