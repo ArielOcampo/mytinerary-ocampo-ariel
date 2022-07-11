@@ -7,7 +7,7 @@ const sendVerificationMail = async (email, string) => { //depende del mail que i
 	const urlLocal = "http://localhost:4000/"
 	const myOAuth2Client = new OAuth2(
 		process.env.GOOGLE_CLIENTID,
-		process.env.GOOGLE_CLIENTID,
+		process.env.GOOGLE_CLIENTSECRET,
 		"https://developers.google.com/oauthplayground"
 	)
 
