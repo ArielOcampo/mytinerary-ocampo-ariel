@@ -60,17 +60,10 @@ const CardsActivities = (props) => {
           <SwiperSlide key={index}>
             <div
               style={{
-                backgroundImage: `url("${item.img}")`,
+                backgroundImage: `url("${item.images}")`,
                 backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat"
               }} className="imgCubo "
-            >
-
-              <h4 className="title-cube">{item.title}</h4>
-
-
-
-
-            </div>
+            ><h4 className="title-cube">{item.title}</h4></div>
           </SwiperSlide>
         )}
       </Swiper>

@@ -11,10 +11,6 @@ import Delete from '../images/delete.svg'
 import Edit from '../images/edit.svg'
 
 
-
-
-
-
 const Comments = ({ comments, data }) => {
 
   const [editComment, setEditComment] = useState()

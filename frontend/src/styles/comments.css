@@ -10,7 +10,7 @@
 }
 
 .container-text-area {
-  width: 60vw;
+  width: 60vw !important;
   margin-right: 5px;
   margin-left: 5px
 }
