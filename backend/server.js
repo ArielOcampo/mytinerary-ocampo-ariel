@@ -1,10 +1,11 @@
 require("dotenv").config();
+const mongoose = require("mongoose");
 require("./config/passport");
 require("./config/database");
 const express = require("express");
 const req = require("express/lib/request");
 const passport = require("passport");
-
+mongoose.set("strictQuery", true);
 const Router = require("./routes/routes");
 
 const PORT = process.env.PORT || 4000;
