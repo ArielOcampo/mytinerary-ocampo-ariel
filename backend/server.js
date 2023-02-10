@@ -20,6 +20,9 @@ app.use("/api", Router);
 // app.get("*", (req, res) => {
 //   res.redirect("https://" + req.headers.host + req.url);
 // });
+app.get("/", function (req, res) {
+  res.render("index", {});
+});
 app.listen(PORT, () => {
   console.log("Servidor Corriendo en puerto:" + PORT);
 });
