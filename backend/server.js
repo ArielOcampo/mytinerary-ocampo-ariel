@@ -17,9 +17,9 @@ app.use(passport.initialize());
 app.use(express.json());
 app.use("/api", Router);
 
-app.get("*", (req, res) => {
-  res.redirect("https://" + req.headers.host + req.url);
-});
+// app.get("*", (req, res) => {
+//   res.redirect("https://" + req.headers.host + req.url);
+// });
 app.listen(PORT, () => {
   console.log("Servidor Corriendo en puerto:" + PORT);
 });
