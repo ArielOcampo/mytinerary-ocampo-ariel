@@ -1,47 +1,54 @@
-import axios from 'axios'
+import axios from "axios";
+
+let urlHost = "https://mytinerary-backend.up.railway.app/";
+// let urlHost = 'http://localhost:4000/'
 
 const itinerariesActions = {
   getItineraries: () => {
     return async (dispatch, getState) => {
-      const res = await axios.get('http://localhost:4000/api/itineraries')
+      const res = await axios.get(urlHost + `api/itineraries`);
 
-      dispatch({ type: 'GET_ITINERARIES', payload: res.data.response.itineraries })
-      return res
-    }
-
+      dispatch({
+        type: "GET_ITINERARIES",
+        payload: res.data.response.itineraries,
+      });
+      return res;
+    };
   },
   getItinerary: (id) => {
     return async (dispatch, getState) => {
-      const res = await axios.get(`http://localhost:4000/api/itineraries/${id}`)
-      dispatch({ type: 'GET_ITINERARY', payload: res.data.response })
-      return res
-    }
-
+      const res = await axios.get(`${urlHost}api/itineraries/${id}`);
+      dispatch({ type: "GET_ITINERARY", payload: res.data.response });
+      return res;
+    };
   },
   getItinerariesById: (id) => {
     return async (dispatch, getState) => {
-      const res = await axios.get(`http://localhost:4000/api/itinerariesbycity/${id}`)
+      const res = await axios.get(`${urlHost}api/itinerariesbycity/${id}`);
 
-      dispatch({ type: 'GET_ITINERARIES_BY_ID', payload: res.data.response })
-    }
+      dispatch({ type: "GET_ITINERARIES_BY_ID", payload: res.data.response });
+    };
   },
   likeDislike: (id) => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token");
     return async (dispatch, getState) => {
       try {
-        const res = await axios.put(`http://localhost:4000/api/itineraries/like/${id}`, {}, {
-          headers: {
-            'Authorization': 'Bearer ' + token
+        const res = await axios.put(
+          `${urlHost}api/itineraries/like/${id}`,
+          {},
+          {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
           }
-        })
+        );
 
-        return res
-
+        return res;
       } catch (err) {
         console.error(err);
       }
-    }
-  }
-}
+    };
+  },
+};
 
-export default itinerariesActions
+export default itinerariesActions;

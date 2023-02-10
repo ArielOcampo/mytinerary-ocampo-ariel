@@ -1,59 +1,62 @@
-import axios from 'axios'
+import axios from "axios";
+
+let urlHost = "https://mytinerary-backend.up.railway.app/";
+// let urlHost = 'http://localhost:4000/'
 
 const userActions = {
-
   signUpUsers: (userData) => {
     return async (dispatch, getState) => {
       try {
-        const res = await axios.post('http://localhost:4000/api/signUp', { userData })
-        console.log(res)
+        const res = await axios.post(urlHost + `api/signUp`, {
+          userData,
+        });
+        console.log(res);
         dispatch({
-          type: 'message',
+          type: "message",
           payload: {
             view: true,
             message: res.data.message,
             success: res.data.success,
-
-
-          }
-
-        })
-        console.log(res)
-        return res
+          },
+        });
+        console.log(res);
+        return res;
       } catch (error) {
         console.log(error);
       }
-    }
+    };
   },
 
   loginUsers: (logedUser) => {
-
     return async (dispatch, getState) => {
       try {
-        const res = await axios.post('http://localhost:4000/api/login', { logedUser })
+        const res = await axios.post(urlHost + `api/login`, {
+          logedUser,
+        });
 
         if (res.data.success) {
-          localStorage.setItem('token', res.data.response.token)
+          localStorage.setItem("token", res.data.response.token);
           dispatch({
-            type: 'user',
-            payload: { user: res.data.response.userData, success: res.data.success }
-          })
-
+            type: "user",
+            payload: {
+              user: res.data.response.userData,
+              success: res.data.success,
+            },
+          });
         }
 
-        return res
+        return res;
       } catch (error) {
         console.log(error);
       }
-
-    }
+    };
   },
 
   signOut: () => {
     return (dispatch, getState) => {
       dispatch({
         type: "SIGN_OUT",
-        payload: { message: "Thanks for your visit" }
+        payload: { message: "Thanks for your visit" },
       });
     };
   },
@@ -61,33 +64,35 @@ const userActions = {
   verifyToken: (token) => {
     return async (dispatch, getState) => {
       try {
-        const user = await axios.get('http://localhost:4000/api/logintoken', {
+        const user = await axios.get(urlHost + `api/logintoken`, {
           headers: {
-            'Authorization': 'Bearer ' + token
-          }
-        })
-
+            Authorization: "Bearer " + token,
+          },
+        });
 
         if (user.data.success) {
-          dispatch({ type: 'user', payload: { user: user.data.response, success: user.data.success } });
           dispatch({
-            type: 'MESSAGE_USER',
-            payload: { view: true, message: user.data.message, success: user.data.success }
-          })
-
+            type: "user",
+            payload: { user: user.data.response, success: user.data.success },
+          });
+          dispatch({
+            type: "MESSAGE_USER",
+            payload: {
+              view: true,
+              message: user.data.message,
+              success: user.data.success,
+            },
+          });
+        } else {
+          localStorage.removeItem("item");
         }
-        else { localStorage.removeItem('item') }
 
-        return user
-
-
+        return user;
       } catch (err) {
         console.error(err);
       }
-    }
+    };
   },
+};
 
-
-}
-
-export default userActions
+export default userActions;
