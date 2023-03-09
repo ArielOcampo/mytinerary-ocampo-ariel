@@ -64,7 +64,6 @@ const activityActions = {
         );
 
         return {
-          //NO DESPACHA! RETURNA PARA SETEAR UN HOOK COMÚN
           success: true,
           response: answer.data.response.activities,
         };
