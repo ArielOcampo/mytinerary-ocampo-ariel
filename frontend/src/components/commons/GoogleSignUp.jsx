@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 import { useDispatch } from "react-redux";
-import userActions from "../redux/actions/userActions";
+import userActions from "../../redux/actions/userActions";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { CLIENT_ID } from "../consts/google";
+import { CLIENT_ID } from "../../consts/google";
 
 export default function GoogleSignUp() {
   const dispatch = useDispatch();

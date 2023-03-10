@@ -3,10 +3,10 @@ import { Link as Linkrouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 // import Avatars from "../components/Avatars";
-import citiesActions from "../redux/actions/citiesActions";
-import "../styles/cards.css";
-import Video from "../images/video-cities.mp4";
-import { Avatars, NoResults } from "../components";
+import citiesActions from "../../redux/actions/citiesActions";
+import { Avatars, NoResults } from ".";
+import "../../styles/cards.css";
+import { VideoCities } from "../../images";
 
 // import itinerariesActions from '../redux/actions/itinerariesActions';
 
@@ -24,7 +24,14 @@ function Cards() {
 
   return (
     <>
-      <video className="video" autoPlay loop muted playsInline src={Video} />
+      <video
+        className="video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        src={VideoCities}
+      />
       <div className="search flex items-center mt-10">
         <label htmlFor="simple-search" className="sr-only">
           Search

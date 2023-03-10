@@ -1,0 +1,14 @@
+export { default as VideoCities } from "./video-cities.mp4";
+export { default as VideoHero } from "./video-hero.mp4";
+export { default as DeleteSvg } from "./delete.svg";
+export { default as EditSvg } from "./edit.svg";
+export { default as Error404 } from "./error.png";
+export { default as Logo } from "./logo.png";
+export { default as Avatar } from "./avatar.png";
+export { default as NoItineraries } from "./no-itineraries.svg";
+export { default as Heart } from "./heart.svg";
+export { default as Heart2 } from "./heart2.svg";
+export { default as ArrowDown } from "./arrow-down.svg";
+export { default as ArrowUp } from "./arrow-up.svg";
+export { default as Login } from "./login.jpg";
+export { default as NoResultsImage } from "./no-results.png";

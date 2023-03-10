@@ -7,10 +7,10 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import { Autoplay, EffectCube, Pagination, EffectCoverflow } from "swiper";
-import '../styles/cardsactivities.css'
+import "../../styles/cardsactivities.css";
 
 const CardsActivities = (props) => {
-  let activities = props.props
+  let activities = props.props;
 
   return (
     <>
@@ -30,7 +30,6 @@ const CardsActivities = (props) => {
         modules={[EffectCoverflow, Pagination, Autoplay]}
         autoplay={{
           delay: 2000,
-
         }}
         className="mySwiper"
       >
@@ -55,20 +54,24 @@ const CardsActivities = (props) => {
         className="mySwiper"
       > */}
 
-        {activities?.map((item, index) =>
-
+        {activities?.map((item, index) => (
           <SwiperSlide key={index}>
             <div
               style={{
                 backgroundImage: `url("${item.images}")`,
-                backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat"
-              }} className="imgCubo "
-            ><h4 className="title-cube">{item.title}</h4></div>
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+              className="imgCubo "
+            >
+              <h4 className="title-cube">{item.title}</h4>
+            </div>
           </SwiperSlide>
-        )}
+        ))}
       </Swiper>
     </>
-  )
-}
+  );
+};
 
-export default CardsActivities
+export default CardsActivities;

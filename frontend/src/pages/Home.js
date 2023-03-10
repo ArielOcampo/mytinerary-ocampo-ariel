@@ -1,5 +1,4 @@
-import Hero from "../components/Hero";
-import Carousel from "../components/Carousel";
+import { Hero, Carousel } from "../components/commons/";
 
 function Home() {
   return (

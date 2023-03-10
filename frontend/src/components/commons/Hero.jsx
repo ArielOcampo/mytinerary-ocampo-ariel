@@ -1,14 +1,24 @@
-import { Link as LinkRouter } from "react-router-dom"
-import '../styles/hero.css'
-import Video from '../images/video-hero.mp4'
+import { Link as LinkRouter } from "react-router-dom";
+import "../../styles/hero.css";
+import { VideoHero } from "../../images/";
 export default function Hero() {
   return (
     <>
-      <div className="hero-container" >
-        <video className='video' autoPlay loop muted playsInline src={Video} />
+      <div className="hero-container">
+        <video
+          className="video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          src={VideoHero}
+        />
         <div className="texto">
           <h1 className="font-bold ">MyTinerary</h1>
-          <p className="mb-5 text-start ">Find your perfect trip, designed by insiders who know and love their cities!</p>
+          <p className="mb-5 text-start ">
+            Find your perfect trip, designed by insiders who know and love their
+            cities!
+          </p>
           <LinkRouter to="/cities" href="#">
             <button className="button">
               <span className="button_lg">
@@ -16,12 +26,9 @@ export default function Hero() {
                 <span className="button_text">Find your next experience</span>
               </span>
             </button>
-
           </LinkRouter>
         </div>
       </div>
-
-
     </>
-  )
+  );
 }
