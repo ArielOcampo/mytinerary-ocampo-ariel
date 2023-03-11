@@ -10,7 +10,7 @@ const userActions = {
         const res = await axios.post(urlHost + `api/signUp`, {
           userData,
         });
-        console.log(res);
+
         dispatch({
           type: "message",
           payload: {
@@ -19,11 +19,9 @@ const userActions = {
             success: res.data.success,
           },
         });
-        console.log(res);
+
         return res;
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     };
   },
 

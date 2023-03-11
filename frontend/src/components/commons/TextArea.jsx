@@ -1,34 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-
-import commentsActions from "../../redux/actions/commentsActions";
-import itinerariesActions from "../../redux/actions/itinerariesActions";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { CommentsActions, ItinerariesActions } from "../../redux/actions";
+
 const TextArea = ({ data }) => {
   const [inputText, setInputText] = useState("");
-  const dispatch = useDispatch();
   const [reload, setReload] = useState(false);
+  const dispatch = useDispatch();
 
-  let oneItinerary = data?.data.response;
-  let cityId = data?.data.response.city;
+  const oneItinerary = data?.data.response;
+  const cityId = data?.data.response.city;
 
-  //FUNCIÓN PARA HACER COMENTARIOS
-  async function uploadComment(event) {
+  const uploadComment = async (event) => {
     event.preventDefault();
     const comment = {
       itineraryId: event.target.id,
       comment: inputText,
     };
-    let commentAdd = await dispatch(commentsActions.addComment(comment));
+    const commentAdd = await dispatch(CommentsActions.addComment(comment));
     toast.success(commentAdd.data.message);
     setInputText("");
     setReload(!reload);
-  }
+  };
 
   useEffect(() => {
-    dispatch(itinerariesActions.getItinerariesById(cityId));
+    dispatch(ItinerariesActions.getItinerariesById(cityId));
     // eslint-disable-next-line
   }, [reload]);
 

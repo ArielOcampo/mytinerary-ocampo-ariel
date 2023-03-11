@@ -1,8 +1,8 @@
 import React from "react";
 import Carousel from "react-grid-carousel";
-import "../../styles/carousel.css";
-
 import { useSelector } from "react-redux";
+
+import "../../styles/carousel.css";
 
 const CarouselHome = () => {
   const cities = useSelector((store) => store.citiesReducer.cities);

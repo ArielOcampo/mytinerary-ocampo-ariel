@@ -1,7 +1,9 @@
 import { Link as LinkRouter } from "react-router-dom";
+
 import "../../styles/hero.css";
 import { VideoHero } from "../../images/";
-export default function Hero() {
+
+const Hero = () => {
   return (
     <>
       <div className="hero-container">
@@ -31,4 +33,5 @@ export default function Hero() {
       </div>
     </>
   );
-}
+};
+export default Hero;

@@ -1,7 +1,8 @@
 import React from "react";
-import "../styles/details.css";
-import Itineraries from "../components/commons/Itineraries";
 import { useSelector } from "react-redux";
+
+import "../styles/details.css";
+import { Itineraries } from "../components/commons";
 
 export default function Details() {
   const cities = useSelector((store) => store.citiesReducer.oneCity);

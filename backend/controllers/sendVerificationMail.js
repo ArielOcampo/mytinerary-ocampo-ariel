@@ -3,11 +3,10 @@ const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 
 const sendVerificationMail = async (email, string) => {
-  //depende del mail que ingresa el usuario y el uniqueString que se crea con crypto
-  const urlHeroku = "https://mytinerary-backend.up.railway.app/";
+  const urlBackend = "https://mytinerary-backend.up.railway.app/";
   const urlLocal = "http://localhost:4000/";
   const myOAuth2Client = new OAuth2(
-    process.env.GOOGLE_CLIENTID,
+    process.env.GOOGLE_CLIENT_ID,
     process.env.GOOGLE_CLIENTSECRET,
     "https://developers.google.com/oauthplayground"
   );
@@ -15,7 +14,7 @@ const sendVerificationMail = async (email, string) => {
   myOAuth2Client.setCredentials({
     refresh_token: process.env.GOOGLE_REFRESHTOKEN,
   });
-  console.log(process.env.GOOGLE_CLIENTID);
+
   const accessToken = myOAuth2Client.getAccessToken();
 
   const transporter = nodemailer.createTransport({
@@ -24,7 +23,7 @@ const sendVerificationMail = async (email, string) => {
       user: process.env.USER,
       type: "OAuth2",
       user: process.env.USER,
-      clientId: process.env.GOOGLE_CLIENTID,
+      clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENTSECRET,
       refreshToken: process.env.GOOGLE_REFRESHTOKEN,
       accessToken: accessToken,
@@ -110,7 +109,7 @@ const sendVerificationMail = async (email, string) => {
 														<tr>
 															<td style="padding-bottom:20px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:left;">
 																<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:48px;width:213px;v-text-anchor:middle;" arcsize="34%" stroke="false" fillcolor="#506bec"><w:anchorlock/><v:textbox inset="5px,0px,0px,0px"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:15px"><![endif]-->
-																<div style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#506bec;border-radius:16px;width:auto;border-top:0px solid TRANSPARENT;font-weight:400;border-right:0px solid TRANSPARENT;border-bottom:0px solid TRANSPARENT;border-left:0px solid TRANSPARENT;padding-top:8px;padding-bottom:8px;font-family:Helvetica Neue, Helvetica, Arial, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:25px;padding-right:20px;font-size:15px;display:inline-block;letter-spacing:normal;"><span style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><span style="font-size: 15px; line-height: 30px;" data-mce-style="font-size: 15px; line-height: 30px; color:white;"><strong><a  style="text-decoration:none;color:#ffffff;" href=${urlHeroku}api/verify/${string}>CONFIRM YOUR EMAIL</a></strong></span></span></span></div>
+																<div style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#506bec;border-radius:16px;width:auto;border-top:0px solid TRANSPARENT;font-weight:400;border-right:0px solid TRANSPARENT;border-bottom:0px solid TRANSPARENT;border-left:0px solid TRANSPARENT;padding-top:8px;padding-bottom:8px;font-family:Helvetica Neue, Helvetica, Arial, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:25px;padding-right:20px;font-size:15px;display:inline-block;letter-spacing:normal;"><span style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><span style="font-size: 15px; line-height: 30px;" data-mce-style="font-size: 15px; line-height: 30px; color:white;"><strong><a  style="text-decoration:none;color:#ffffff;" href=${urlBackend}api/verify/${string}>CONFIRM YOUR EMAIL</a></strong></span></span></span></div>
 																<!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
 															</td>
 														</tr>

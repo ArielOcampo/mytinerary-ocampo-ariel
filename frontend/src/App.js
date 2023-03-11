@@ -1,31 +1,31 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/commons/Navbar";
-import Footer from "./components/commons/Footer";
-import Home from "./pages/Home";
-import Cities from "./pages/Cities";
-import Error from "./components/commons/Error";
+import { ToastContainer } from "react-toastify";
+
+import { Cities, Details, Home } from "./pages";
+import {
+  Comments,
+  NavBar,
+  Footer,
+  Error,
+  ScrollTop,
+  SignUp,
+  LogIn,
+} from "./components/commons";
 import "./App.css";
-import Details from "./pages/Details";
 import ScrollToTop from "react-scroll-to-top";
 import { ReactComponent as MySVG } from "../src/images/up-icon.svg";
-import ScrollTop from "./components/commons/ScrollTop";
-import citiesActions from "./redux/actions/citiesActions";
-import SignUp from "./components/commons/SignUp";
-import LogIn from "./components/commons/LogIn";
-import { ToastContainer } from "react-toastify";
-import userActions from "./redux/actions/userActions";
-import { Comments } from "./components/commons";
+import { CitiesActions, UserActions } from "./redux/actions";
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(citiesActions.getCities());
+    dispatch(CitiesActions.getCities());
     if (localStorage.getItem("token") !== null) {
       const token = localStorage.getItem("token");
-      dispatch(userActions.verifyToken(token));
+      dispatch(UserActions.verifyToken(token));
     }
     // eslint-disable-next-line
   }, []);
@@ -48,7 +48,7 @@ function App() {
             pauseOnHover
           />
           <ScrollTop />
-          <Navbar />
+          <NavBar />
           <ScrollToTop
             smooth
             style={{ width: "48px", height: "48px", borderRadius: "50%" }}
@@ -78,5 +78,5 @@ function App() {
       </div>
     </>
   );
-}
+};
 export default App;

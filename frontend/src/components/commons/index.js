@@ -1,9 +1,17 @@
 export { default as NavBar } from "./Navbar";
+export { default as Footer } from "./Footer";
 export { default as NoResults } from "./NoResults";
 export { default as Cards } from "./Cards";
+export { default as Itineraries } from "./Itineraries";
 export { default as Avatars } from "./Avatars";
 export { default as CardsActivities } from "./CardsActivities";
 export { default as TextArea } from "./TextArea";
 export { default as Comments } from "./Comments";
 export { default as Hero } from "./Hero";
 export { default as Carousel } from "./Carousel";
+export { default as GoogleLogin } from "./GoogleLogin";
+export { default as GoogleSignUp } from "./GoogleSignUp";
+export { default as LogIn } from "./LogIn";
+export { default as SignUp } from "./SignUp";
+export { default as Error } from "./Error";
+export { default as ScrollTop } from "./ScrollTop";

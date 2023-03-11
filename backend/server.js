@@ -26,4 +26,4 @@ app.listen(PORT, () => {
   console.log("Servidor Corriendo en puerto:" + PORT);
 });
 
-const CLIENTID = process.env.CLIENT_ID;
+const CLIENT_ID = process.env.CLIENT_ID;

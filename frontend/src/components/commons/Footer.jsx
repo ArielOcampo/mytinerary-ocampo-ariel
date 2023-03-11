@@ -1,6 +1,7 @@
+import { Link as LinkRouter } from "react-router-dom";
+
 import { Logo } from "../../images/";
 import "../../styles/footer.css";
-import { Link as LinkRouter } from "react-router-dom";
 
 export default function Footer() {
   return (

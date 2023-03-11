@@ -1,18 +1,25 @@
+import { useNavigate } from "react-router";
 
-import '../styles/construction.css'
-import Video from '../images/video-construction.mp4'
-import { useNavigate } from 'react-router';
+import "../styles/construction.css";
+import Video from "../images/video-construction.mp4";
 
 export default function Construction() {
   let navigate = useNavigate();
   function click() {
-    navigate('/')
+    navigate("/");
   }
 
   return (
     <>
-      <div className="construction-container" >
-        <video className='video-construction' autoPlay loop muted playsInline src={Video} />
+      <div className="construction-container">
+        <video
+          className="video-construction"
+          autoPlay
+          loop
+          muted
+          playsInline
+          src={Video}
+        />
         <div className="texto-construction">
           <h1 className="font-bold ">Site under construction</h1>
           <p className="mb-5 text-start ">Soon we will have more news!</p>
@@ -22,11 +29,8 @@ export default function Construction() {
             </span>
             <span className="button-text">Back to home</span>
           </button>
-
         </div>
       </div>
-
-
     </>
-  )
+  );
 }

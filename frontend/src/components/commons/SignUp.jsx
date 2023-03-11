@@ -1,19 +1,20 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import userActions from "../../redux/actions/userActions";
+import { Link as LinkRouter } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import GoogleSignUp from "./GoogleSignUp";
+
 import "../../styles/signup.css";
-import { Link as LinkRouter } from "react-router-dom";
+import { GoogleSignUp } from "../commons";
+import { UserActions } from "../../redux/actions";
 
 function SignUp() {
   const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(event.target[2].value);
+
     const userData = {
       firstName: event.target[0].value,
       lastName: event.target[1].value,
@@ -23,9 +24,9 @@ function SignUp() {
       country: event.target[5].value,
       from: "form-Signup",
     };
-    const res = await dispatch(userActions.signUpUsers(userData));
-    console.log(res);
-    let errorValidator = res.data.message;
+    const res = await dispatch(UserActions.signUpUsers(userData));
+
+    const errorValidator = res.data.message;
 
     if (res.data.from === "validator") {
       errorValidator.forEach((element) => {

@@ -1,29 +1,28 @@
-import { Fragment } from "react";
+import { useEffect, Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Avatar, Logo } from "../../images/";
-
-import "../../styles/navbar.css";
 import { Link as LinkRouter } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import userActions from "../../redux/actions/userActions";
 import { toast } from "react-toastify";
-import { useEffect, useState } from "react";
+
+import "../../styles/navbar.css";
+import { Avatar, Logo } from "../../images/";
+import { UserActions } from "../../redux/actions";
 
 const navigation = [
   { name: "Home", to: "/", current: true },
   { name: "Cities", to: "cities", current: false },
 ];
-function classNames(...classes) {
+const classNames = (...classes) => {
   return classes.filter(Boolean).join(" ");
-}
+};
 
-export default function Example() {
+const NavBar = () => {
   const dispatch = useDispatch();
   const loginUser = useSelector((store) => store.userReducer.user);
 
   useEffect(() => {
-    dispatch(userActions.loginUsers);
+    dispatch(UserActions.loginUsers);
     // eslint-disable-next-line
   }, []);
 
@@ -141,7 +140,7 @@ export default function Example() {
                               <LinkRouter
                                 onClick={() => {
                                   toast("👋 Thanks for your visit");
-                                  dispatch(userActions.signOut());
+                                  dispatch(UserActions.signOut());
                                 }}
                                 to="home"
                                 className={classNames(
@@ -200,4 +199,5 @@ export default function Example() {
       </Disclosure>
     </>
   );
-}
+};
+export default NavBar;

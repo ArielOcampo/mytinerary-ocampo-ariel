@@ -1,12 +1,12 @@
 import React from "react";
-import { Login } from "../../images/";
-import { Link as LinkRouter } from "react-router-dom";
-import GoogleLogin from "./GoogleLogin";
+import { Link as LinkRouter, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import userActions from "../../redux/actions/userActions";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
+
+import { Login } from "../../images/";
+import { GoogleLogin } from "../commons";
+import { UserActions } from "../../redux/actions";
 
 const LogIn = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const LogIn = () => {
       from: "form-Signup",
     };
 
-    let res = await dispatch(userActions.loginUsers(logedUser));
+    const res = await dispatch(UserActions.loginUsers(logedUser));
 
     if (res.data.success) {
       toast.success(res.data.message);
@@ -109,7 +109,6 @@ const LogIn = () => {
                       to="/signup"
                       className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer"
                     >
-                      {" "}
                       Sign up here
                     </LinkRouter>
                   </p>

@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
-import jwt_decode from "jwt-decode";
-import { useDispatch } from "react-redux";
-import userActions from "../../redux/actions/userActions";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import jwt_decode from "jwt-decode";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CLIENT_ID } from "../../consts/google";
 
-export default function GoogleSignUp() {
-  const dispatch = useDispatch();
+import { UserActions } from "../../redux/actions";
+
+const GoogleSignUp = () => {
   const [country, setCountry] = useState({});
+  const dispatch = useDispatch();
 
   useEffect(() => {
     axios
@@ -22,11 +23,11 @@ export default function GoogleSignUp() {
       });
   }, []);
 
-  async function handleCallbackResponse(response) {
-    let userObject = jwt_decode(response.credential);
+  const handleCallbackResponse = async (response) => {
+    const userObject = jwt_decode(response.credential);
 
-    let res = await dispatch(
-      userActions.signUpUsers({
+    const res = await dispatch(
+      UserActions.signUpUsers({
         firstName: userObject.given_name,
         lastName: userObject.family_name,
         userPhoto: userObject.picture,
@@ -42,7 +43,7 @@ export default function GoogleSignUp() {
     } else {
       toast.error(res.data.message);
     }
-  }
+  };
 
   useEffect(() => {
     /* global google */
@@ -65,4 +66,5 @@ export default function GoogleSignUp() {
       <div id="buttonDiv"></div>
     </div>
   );
-}
+};
+export default GoogleSignUp;

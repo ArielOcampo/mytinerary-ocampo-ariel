@@ -33,7 +33,7 @@ const CardsActivities = ({ activities }) => {
           <SwiperSlide key={index}>
             <div
               style={{
-                backgroundImage: `url("${item?.images}")`,
+                backgroundImage: `url("${item?.img}")`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
