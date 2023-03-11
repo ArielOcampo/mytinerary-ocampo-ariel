@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let urlHost = "https://mytinerary-backend.up.railway.app/";
+let urlHost = "https://mytinerary-backend.up.railway.app";
 // let urlHost = 'http://localhost:4000/'
 const commentsActions = {
   addComment: (comment) => {
@@ -8,7 +8,7 @@ const commentsActions = {
     return async (dispatch, getState) => {
       if (comment.comment !== "") {
         const res = await axios.post(
-          `${urlHost}api/comments`,
+          `${urlHost}/api/comments`,
           { comment },
           {
             headers: {
@@ -33,7 +33,7 @@ const commentsActions = {
     const token = localStorage.getItem("token");
     return async (dispatch, getState) => {
       const res = await axios.put(
-        `${urlHost}api/comments`,
+        `${urlHost}/api/comments`,
         { comment },
         {
           headers: {
@@ -57,7 +57,7 @@ const commentsActions = {
     const token = localStorage.getItem("token");
     return async (dispatch, getState) => {
       const res = await axios.post(
-        `${urlHost}api/comments/${id}`,
+        `${urlHost}/api/comments/${id}`,
         {},
         {
           headers: {

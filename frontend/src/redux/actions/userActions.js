@@ -1,13 +1,13 @@
 import axios from "axios";
 
-let urlHost = "https://mytinerary-backend.up.railway.app/";
+let urlHost = "https://mytinerary-backend.up.railway.app";
 // let urlHost = 'http://localhost:4000/'
 
 const userActions = {
   signUpUsers: (userData) => {
     return async (dispatch, getState) => {
       try {
-        const res = await axios.post(urlHost + `api/signUp`, {
+        const res = await axios.post(urlHost + `/api/signUp`, {
           userData,
         });
 
@@ -28,7 +28,7 @@ const userActions = {
   loginUsers: (logedUser) => {
     return async (dispatch, getState) => {
       try {
-        const res = await axios.post(urlHost + `api/login`, {
+        const res = await axios.post(urlHost + `/api/login`, {
           logedUser,
         });
 
@@ -62,7 +62,7 @@ const userActions = {
   verifyToken: (token) => {
     return async (dispatch, getState) => {
       try {
-        const user = await axios.get(urlHost + `api/logintoken`, {
+        const user = await axios.get(urlHost + `/api/logintoken`, {
           headers: {
             Authorization: "Bearer " + token,
           },

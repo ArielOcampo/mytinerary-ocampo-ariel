@@ -1,12 +1,12 @@
 import axios from "axios";
 
-let urlHost = "https://mytinerary-backend.up.railway.app/";
+let urlHost = "https://mytinerary-backend.up.railway.app";
 // let urlHost = 'http://localhost:4000/'
 
 const itinerariesActions = {
   getItineraries: () => {
     return async (dispatch, getState) => {
-      const res = await axios.get(urlHost + `api/itineraries`);
+      const res = await axios.get(urlHost + `/api/itineraries`);
 
       dispatch({
         type: "GET_ITINERARIES",
@@ -17,14 +17,14 @@ const itinerariesActions = {
   },
   getItinerary: (id) => {
     return async (dispatch, getState) => {
-      const res = await axios.get(`${urlHost}api/itineraries/${id}`);
+      const res = await axios.get(`${urlHost}/api/itineraries/${id}`);
       dispatch({ type: "GET_ITINERARY", payload: res.data.response });
       return res;
     };
   },
   getItinerariesById: (id) => {
     return async (dispatch, getState) => {
-      const res = await axios.get(`${urlHost}api/itinerariesbycity/${id}`);
+      const res = await axios.get(`${urlHost}/api/itinerariesbycity/${id}`);
 
       dispatch({ type: "GET_ITINERARIES_BY_ID", payload: res.data.response });
     };
@@ -34,7 +34,7 @@ const itinerariesActions = {
     return async (dispatch, getState) => {
       try {
         const res = await axios.put(
-          `${urlHost}api/itineraries/like/${id}`,
+          `${urlHost}/api/itineraries/like/${id}`,
           {},
           {
             headers: {
