@@ -3,7 +3,7 @@ const bcryptjs = require("bcryptjs");
 const crypto = require("crypto");
 const sendVerificationMail = require("../controllers/sendVerificationMail");
 const jwt = require("jsonwebtoken");
-const urlHerokuFront = "https://mytinerary-ocampoa.netlify.app/";
+const urlHost = "https://mytinerary-ocampoa.netlify.app";
 // const urlLocal = "http://localhost:4000/";
 const userControllers = {
   signUpUsers: async (req, res) => {
@@ -199,7 +199,7 @@ const userControllers = {
     if (user) {
       user.verification = true;
       await user.save();
-      res.redirect(`${urlHerokuFront}`);
+      res.redirect(`${urlHost}`);
     } else {
       res.json({
         success: false,
@@ -218,7 +218,7 @@ const userControllers = {
           UserPhoto: req.user.userPhoto,
           from: "token",
         },
-        message: "Welcome backsadasd " + req.user.firstName,
+        message: "Welcome back " + req.user.firstName,
       });
     } else {
       res.json({
