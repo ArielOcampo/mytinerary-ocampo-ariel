@@ -73,11 +73,3 @@ const CarouselHome = () => {
   );
 };
 export default CarouselHome;
-
-// const mapStateToProps = (state) => {
-//   return {
-//     cities: state.citiesReducer.cities,
-//     auxiliar: state.citiesReducer.auxiliar
-//   }
-// }
-// export default connect(mapStateToProps, null)(CarouselHome)
