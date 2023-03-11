@@ -1,12 +1,11 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
 
-const Avatars = (prop) => {
-  const itinerary = prop.prop;
+const Avatars = ({ itinerary }) => {
   return (
     <>
       <div className="px-6 flex items-center flex-no-wrap  ">
-        {itinerary.map((item) => (
+        {itinerary?.map((item) => (
           <div
             key={item.creator?.name}
             className="w-12 h-12 bg-cover bg-center rounded-md "

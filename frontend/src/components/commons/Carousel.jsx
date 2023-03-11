@@ -1,8 +1,7 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import Carousel from "react-grid-carousel";
 import "../../styles/carousel.css";
-// import { connect } from 'react-redux';
+
 import { useSelector } from "react-redux";
 
 const CarouselHome = () => {

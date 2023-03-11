@@ -2,13 +2,10 @@ import { useState, useEffect } from "react";
 import { Link as Linkrouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-// import Avatars from "../components/Avatars";
 import citiesActions from "../../redux/actions/citiesActions";
 import { Avatars, NoResults } from ".";
 import "../../styles/cards.css";
 import { VideoCities } from "../../images";
-
-// import itinerariesActions from '../redux/actions/itinerariesActions';
 
 function Cards() {
   const [search, setSearch] = useState("");
@@ -105,7 +102,7 @@ function Cards() {
                   <p className="mb-3 text-cards font-normal text-gray-400 dark:text-gray-400">
                     {item.description}
                   </p>
-                  <Avatars prop={item.itinerary} />
+                  <Avatars itinerary={item.itinerary} />
                   <div className="flex justify-end">
                     <Linkrouter
                       to={`/citie/${item._id}`}

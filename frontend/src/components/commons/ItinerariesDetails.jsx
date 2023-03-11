@@ -168,7 +168,7 @@ const ItinerariesDetails = ({ city, cityId }) => {
         <div className=" flex flex-col items-center  justify-between   ">
           <div className=" div-cube order-first">
             {activities !== undefined ? (
-              <CardsActivities props={activities} />
+              <CardsActivities activities={activities} />
             ) : (
               "No activities yet"
             )}
