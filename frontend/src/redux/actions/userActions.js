@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let urlHost = "https://mytinerary-backend.up.railway.app";
+let urlHost = "https://darwin-goanna-skdq.2.sg-1.fl0.io";
 // let urlHost = 'http://localhost:4000/'
 
 const userActions = {
